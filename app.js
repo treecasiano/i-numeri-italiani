@@ -1,20 +1,20 @@
-var express = require('express');
+var express = require("express");
 var app = express();
+var path = require("path");
+var bodyparser = require("body-parser");
 var translate = require('./lib/translate');
+var port = process.env.PORT || 3000;
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.use(express.static( path.join(__dirname, 'app')) );
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
+
+app.post('/translate', function( req, res ) {
+  var input = req.body.text;
+  var output = translate(input);
+  res.json( { translation: output} );
 });
 
-app.get('/translate', function( req, res ) {
-  res.send('Hello from translate!');
+app.listen(port, function() {
+  console.log('app started on port ', port);
 });
-
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('App listening at http://%s:%s', host, port);
-
-});
-
