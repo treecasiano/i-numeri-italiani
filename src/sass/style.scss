@@ -1,0 +1,39 @@
+@import "normalize";
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: white;
+$primary-background: maroon;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background: black;
+
+}
+
+.content {
+    @include border-radius(10px);
+    position: relative;
+    max-width: 50%;
+    margin: auto;
+    top: 50px;
+    text-align: center;
+    background: $primary-background;
+    padding: 50px;
+    font-size: 1.25em;
+}
+
+button {
+    padding: 20px;
+    background: black;
+    color: white;
+    border: 0;
+    @include border-radius(10px);
+}
