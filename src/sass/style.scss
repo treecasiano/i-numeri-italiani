@@ -2,7 +2,8 @@
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: white;
-$primary-background: maroon;
+$primary-background: yellowgreen;
+$body-background: black;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -14,7 +15,7 @@ $primary-background: maroon;
 body {
   font: 100% $font-stack;
   color: $primary-color;
-  background: black;
+  background: $body-background;
 
 }
 
@@ -30,10 +31,20 @@ body {
     font-size: 1.25em;
 }
 
+#showNum {
+  color: black;
+  font-size: 2em;
+}
+
+#showTranslation {
+  color: black;
+  font-size: 2em;
+}
 button {
     padding: 20px;
     background: black;
     color: white;
     border: 0;
+    margin: 10px;
     @include border-radius(10px);
 }
