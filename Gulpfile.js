@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var nodemon = require('gulp-nodemon');
+var mocha = require('gulp-mocha');
 
 gulp.task('styles', function() {
     gulp.src('src/sass/**/*.scss')
@@ -27,6 +28,10 @@ gulp.task('watch', function() {
     gulp.watch('src/sass/*.scss', ['styles']);
 });
 
+gulp.task('tests', function() {
+    gulp.src('test/test.js', {read: false})
+        .pipe(mocha({reporter: 'spec'}));
+});
 // gulp.task('start', function () {
 //   nodemon ({
 //     script: 'app.js',
@@ -37,4 +42,4 @@ gulp.task('watch', function() {
 //     });
 // });
 
-gulp.task('default', ['styles', 'scripts', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'tests', 'watch']);

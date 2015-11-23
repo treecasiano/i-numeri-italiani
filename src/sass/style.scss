@@ -1,8 +1,10 @@
 @import "normalize";
 
 $font-stack:    Helvetica, sans-serif;
-$primary-color: white;
-$primary-background: maroon;
+$primary-text-light: white;
+$primary-text-dark: black;
+$primary-background: yellowgreen;
+$body-background: black;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -12,28 +14,45 @@ $primary-background: maroon;
 }
 
 body {
+  background: $body-background;
+  color: $primary-text-light;
   font: 100% $font-stack;
-  color: $primary-color;
-  background: black;
+  padding-top: 50px;
+}
 
+header {
+  background: $primary-background;
+  color: $primary-text-dark;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
 }
 
 .content {
-    @include border-radius(10px);
-    position: relative;
-    max-width: 50%;
-    margin: auto;
-    top: 50px;
-    text-align: center;
-    background: $primary-background;
-    padding: 50px;
-    font-size: 1.25em;
+  @include border-radius(10px);
+  background: $primary-background;
+  margin: auto;
+  max-width: 80%;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  top: 50px;
+}
+
+#showNum {
+  color: $primary-text-dark;
+}
+
+#showTranslation {
+  color: $primary-text-dark;
 }
 
 button {
-    padding: 20px;
-    background: black;
-    color: white;
-    border: 0;
-    @include border-radius(10px);
+  @include border-radius(10px);
+  background: black;
+  border: 0;
+  color: white;
+  margin: 10px;
+  padding: 20px;
 }
