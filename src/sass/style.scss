@@ -1,7 +1,8 @@
 @import "normalize";
 
 $font-stack:    Helvetica, sans-serif;
-$primary-color: white;
+$primary-text-light: white;
+$primary-text-dark: black;
 $primary-background: yellowgreen;
 $body-background: black;
 
@@ -14,15 +15,25 @@ $body-background: black;
 
 body {
   background: $body-background;
-  color: $primary-color;
+  color: $primary-text-light;
   font: 100% $font-stack;
+  padding-top: 50px;
+}
+
+header {
+  background: $primary-background;
+  color: $primary-text-dark;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
 }
 
 .content {
   @include border-radius(10px);
   background: $primary-background;
   margin: auto;
-  max-width: 50%;
+  max-width: 80%;
   padding: 20px;
   position: relative;
   text-align: center;
@@ -30,11 +41,11 @@ body {
 }
 
 #showNum {
-  color: black;
+  color: $primary-text-dark;
 }
 
 #showTranslation {
-  color: black;
+  color: $primary-text-dark;
 }
 
 button {
