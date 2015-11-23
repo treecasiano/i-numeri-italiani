@@ -1,10 +1,11 @@
-// TODO: allow users to edit the range of numbers
-function generateNumber () {
-  return Math.floor(Math.random() * (9)) + 1;
-}
-
 $( document ).ready(function() {
+
     var numToTranslate;
+
+    function generateNumber () {
+        return Math.floor(Math.random() * (999)) + 1;
+    }
+
     $("#generateNum").on("click", function() {
         $("#showNum").text(generateNumber());
         numToTranslate = $("#showNum").text();
