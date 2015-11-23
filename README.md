@@ -1,2 +1,2 @@
 # inumeri
-Web app that quizzes that asks you to translate numbers into Italian. 
+Node Express app that translates Italian numbers 1 - 9999.
