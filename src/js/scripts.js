@@ -94,7 +94,7 @@ $( document ).ready(function() {
     $totalScore.text(String(score));
     $correctAnswer.text(String(numCorrect));
     $wrongAnswer.text(String(numWrong));
-    $numberButton.removeClass("large-number").text("click to generate number");
+    $numberButton.removeClass("large-number").text("start");
     $translateButton.html("check answer");
     $userResponse.val("").removeClass("wrong-answer correct-answer");
   });

@@ -39,7 +39,8 @@ ul {
 
 .content {
   @include border-radius(10px);
-  background: $primary-background;
+  background: $body-background;
+  color: $primary-text-light;
   margin: 5px auto;
   padding: 10px;
   position: relative;
@@ -61,7 +62,7 @@ ul {
   outline: none;
   padding: 10px 25px;
   text-align: center;
-  min-width: 250px;
+  min-width: 300px;
   margin-bottom: 20px;
 }
 
@@ -76,16 +77,14 @@ ul {
 }
 
 
-
-
 /*----------BUTTON STYLES---------*/
 
 button {
   @include border-radius(25px);
   background: none;
-  color: $primary-text-dark;
+  border: 1px solid $primary-text-light;
+  color: $primary-text-light;
   cursor: pointer;
-  border: none;
   margin: 0;
   outline: none;
   overflow: hidden;
@@ -139,14 +138,11 @@ button {
 
 #generateNum {
   height: 125px;
+  padding: 5px 15px;
 }
 
 .large-number {
   font-size: 2.5em;
-}
-
-#submitTranslation {
-  border: 1px solid $primary-text-dark;
 }
 
 
