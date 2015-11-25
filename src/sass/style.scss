@@ -33,9 +33,15 @@ header {
 
 ul {
   list-style-type: none;
-  text-align: left;
+  padding: 0;
+  letter-spacing: 4px;
 }
 
+li {
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
 
 .content {
   @include border-radius(10px);
@@ -54,16 +60,19 @@ ul {
 }
 
 #user-response {
-  @include border-radius(25px);
   background: $body-background;
-  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   border: none;
+  border-bottom: 4px dashed $primary-text-light;
+  color: white;
   height: 55px;
+  margin-bottom: 20px;
+  min-width: 350px;
   outline: none;
   padding: 10px 25px;
   text-align: center;
-  min-width: 300px;
-  margin-bottom: 20px;
 }
 
 .correct-answer {
@@ -98,6 +107,10 @@ button {
   -moz-transition:    0.08s ease-in;
   -webkit-transition: 0.08s ease-in;
 
+}
+
+button:focus {
+  border: 8px solid $primary-text-light;
 }
 
 .slide:after{
