@@ -19,6 +19,8 @@ $( document ).ready(function() {
   var numQuizzed = 0;
   var score = 0;
 
+  var wrongAnswers = [];
+
   $translateButton.prop('disabled', true);
 
   /***********UTILITY FUNCTIONS**********/
@@ -84,6 +86,8 @@ $( document ).ready(function() {
         $translateButton.text("INCORRECT ANSWER!");
         numWrong ++;
         $wrongAnswer.text(String(numWrong));
+        wrongAnswers.push(numToTranslate);
+        console.log(wrongAnswers);
       }
 
       var score = Math.round((numCorrect/numQuizzed) * 100);
