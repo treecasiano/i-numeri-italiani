@@ -1,7 +1,9 @@
 @import "normalize";
 
-$font-stack:    Helvetica, sans-serif;
-$primary-text-light: white;
+$font-stack:    Dosis, sans-serif;
+
+/*---------------COLORS----------------*/
+$primary-text-light: yellowgreen;
 $primary-text-dark: black;
 $primary-background: yellowgreen;
 $body-background: black;
@@ -15,9 +17,9 @@ $body-background: black;
 
 body {
   background: $body-background;
-  color: $primary-text-light;
-  font: 100% $font-stack;
-  padding-top: 50px;
+  color: $primary-text-dark;
+  font: 125% $font-stack;
+  padding-top: 150px;
 }
 
 header {
@@ -29,30 +31,122 @@ header {
   width: 100%;
 }
 
+ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+
 .content {
   @include border-radius(10px);
   background: $primary-background;
-  margin: auto;
-  max-width: 80%;
-  padding: 20px;
+  margin: 5px auto;
+  padding: 10px;
   position: relative;
   text-align: center;
-  top: 50px;
+  top: 30px;
+  width: 80%;
 }
 
-#showNum {
-  color: $primary-text-dark;
+#quiz {
+  display: none;
 }
 
-#showTranslation {
-  color: $primary-text-dark;
+#user-response {
+  @include border-radius(25px);
+  background: $body-background;
+  border: none;
+  color: $primary-text-light;
+  height: 55px;
+  outline: none;
+  padding: 10px 25px;
+  text-align: center;
+  min-width: 250px;
+  margin-bottom: 20px;
 }
+
+.correct-answer {
+  color: yellow;
+}
+
+.wrong-answer {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+
+
+
+/*----------BUTTON STYLES---------*/
 
 button {
-  @include border-radius(10px);
-  background: black;
-  border: 0;
-  color: white;
-  margin: 10px;
-  padding: 20px;
+  @include border-radius(25px);
+  background: none;
+  color: $primary-text-dark;
+  cursor: pointer;
+  border: none;
+  margin: 12px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  z-index: 1;
+
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
+
 }
+
+.slide:after{
+  content:"PROCEED TO QUIZ →";
+  position:absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  text-align:center;
+  -webkit-transition: all 1000ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.slide:before {
+  content:"In bocca al lupo!";
+  height:100%;
+  width:100%;
+  position:absolute;
+  color:$primary-text-light;
+  left:-100%;
+  opacity: 0;
+  -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.slide:hover{
+  background:$body-background;
+}
+
+.slide:hover:before {
+  left:0;
+  opacity:1;
+  color:$primary-text-light;
+}
+
+.slide:hover:after {
+  left:100%;
+  opacity:0;
+}
+
+#generateNum {
+  height: 150px;
+  border: 1px solid $primary-text-dark;
+}
+
+.large-number {
+  font-size: 2.5em;
+}
+
+#submitTranslation {
+  border: 1px solid $primary-text-dark;
+}
+
+
