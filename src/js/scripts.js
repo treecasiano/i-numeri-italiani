@@ -14,14 +14,13 @@ $( document ).ready(function() {
 
   $("#submitTranslation").on ("click", function() {
     var request = {
-    text: numToTranslate
-  };
+      text: numToTranslate
+    };
 
-  $.post("translate", request, function(response) {
-    $("#showTranslation").text(response.translation);
-  });
+    $.post("translate", request, function(response) {
+      $("#showTranslation").text(response.translation);
+    });
 
-  console.log(request);
-
+    console.log(request);
   });
 });
