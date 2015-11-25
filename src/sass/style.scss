@@ -40,6 +40,7 @@ ul {
 li {
   text-transform: uppercase;
   font-weight: bold;
+  padding: 10px;
 
 }
 
@@ -80,12 +81,12 @@ li {
 }
 
 .wrong-answer {
-  text-decoration: line-through;
-  font-style: italic;
-  color: red !important;
+  color: fuchsia !important;
 }
 
-
+#total-score {
+  color: white;
+}
 /*----------BUTTON STYLES---------*/
 
 button {
