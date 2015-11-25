@@ -17,6 +17,7 @@ $( document ).ready(function() {
   var numCorrect = 0;
   var numWrong = 0;
   var numQuizzed = 0;
+  var score = 0;
 
   $translateButton.prop('disabled', true);
 
@@ -37,8 +38,8 @@ $( document ).ready(function() {
   /***********REVEALING QUIZ**********/
 
   $quizButton.click(function() {
-    $quiz.slideDown(3000).delay(800);
-    $lesson.slideUp(3000).fadeOut(2000);
+    $quiz.slideDown(2000).delay(400);
+    $lesson.slideUp(2000).fadeOut(1500);
   });
 
   /***********GETTING NUMBERS**********/
@@ -48,20 +49,27 @@ $( document ).ready(function() {
     $numberButton.addClass('large-number');
     numToTranslate = $numberButton.text();
     $translateButton.prop('disabled', false);
+    $userResponse.prop('disabled', false);
     $translateButton.html("check answer");
     $userResponse.val("").removeClass("wrong-answer correct-answer");
+    $userResponse.focus();
   });
 
   /***********GETTING TRANSLATION**********/
 
-  $translateButton.click(function() {
-    var request = {
+  function submitAnswer() {
+    if (!$userResponse.val()) {
+      $userResponse.attr("placeholder", "PLEASE ENTER YOUR TRANSLATION");
+      $userResponse.focus();
+    } else {
+      $userResponse.prop('disabled', true);
+      var request = {
       text: numToTranslate
-    };
+      };
 
-    $.post("translate", request, function(response) {
+      $.post("translate", request, function(response) {
       $translateButton.text(response.translation);
-
+      console.log(response.translation);
       numQuizzed ++;
 
     /***********SCORING**********/
@@ -73,17 +81,29 @@ $( document ).ready(function() {
 
       } else {
         $userResponse.addClass("wrong-answer");
+        $translateButton.text("INCORRECT ANSWER!");
         numWrong ++;
         $wrongAnswer.text(String(numWrong));
       }
 
       var score = Math.round((numCorrect/numQuizzed) * 100);
-      console.log(numCorrect, numQuizzed, score);
       $totalScore.text(String(score));
       $translateButton.prop('disabled', true);
-    });
-  });
+      });
+    }
+  }
 
+  $translateButton.click(submitAnswer);
+
+  $userResponse.keypress(function(e){
+    if (e.which==13) {
+      if ($userResponse) {
+        $numberButton.focus();
+      }
+      submitAnswer();
+      this.blur();
+    }
+  });
   /***********RESETTING SCORES**********/
 
   $resetButton.click(function(){
@@ -94,7 +114,7 @@ $( document ).ready(function() {
     $totalScore.text(String(score));
     $correctAnswer.text(String(numCorrect));
     $wrongAnswer.text(String(numWrong));
-    $numberButton.removeClass("large-number").text("start");
+    $numberButton.text("START");
     $translateButton.html("check answer");
     $userResponse.val("").removeClass("wrong-answer correct-answer");
   });
