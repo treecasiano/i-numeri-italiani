@@ -55,8 +55,8 @@ ul {
 #user-response {
   @include border-radius(25px);
   background: $body-background;
+  color: white;
   border: none;
-  color: $primary-text-light;
   height: 55px;
   outline: none;
   padding: 10px 25px;
@@ -66,12 +66,13 @@ ul {
 }
 
 .correct-answer {
-  color: yellow;
+  color: yellow !important;
 }
 
 .wrong-answer {
   text-decoration: line-through;
   font-style: italic;
+  color: red !important;
 }
 
 
@@ -137,8 +138,7 @@ button {
 }
 
 #generateNum {
-  height: 150px;
-  border: 1px solid $primary-text-dark;
+  height: 125px;
 }
 
 .large-number {
