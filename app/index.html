@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>I Numeri</title>
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,16 +13,41 @@
 </header>
 
 <div class="content">
-    <p>Click the first button to generate a number between 1 and 9999.</p>
-    <p>Click the second button to generate the Italian translation.</p>
-    <p id="showNum">9999</p>
-    <p id="showTranslation">translation</p>
-    <button id="generateNum">Generate New Number</button>
-    <button id="submitTranslation">Generate Translation</button>
+    <div id="quiz">
+        <button id="generateNum">click to generate a number</button>
+        <br>
+        <label for="user-response"></label><br>
+        <input id="user-response" type="text" placeholder="enter translation here">
+        <br>
+        <button id="submitTranslation">check answer</button>
+        <ul>
+            <li>correct: <span id="correct-answer">0</span></li>
+            <li>incorrect: <span id="wrong-answer">0</span></li>
+            <li>total score: <span id="total-score">0</span>%</li>
+        </ul>
+        <button id="reset-scores"><strong>reset game</strong></button>
+    </div>
+
+    <div id="lesson">
+        <h2>How to Count in Italian</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni mollitia quam recusandae repellendus voluptatem. A eligendi numquam omnis quibusdam quos temporibus vel!
+        </p>
+    <p>
+        Now that you know the rules, are you ready to test your skill?
+    </p>
+
+
+        <button id="quiz-button" class="slide">&nbsp</button>
+    </div>
+
 </div>
 
 
+
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
