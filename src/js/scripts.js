@@ -12,6 +12,7 @@ $( document ).ready(function() {
 
   var $resetButton = $("#reset-scores");
   var $toggleInstructions = $("#toggle-instructions");
+  var $instructions = $("#instructions");
   var numToTranslate;
 
   var numCorrect = 0;
@@ -47,6 +48,8 @@ $( document ).ready(function() {
   function showLesson() {
     $lesson.slideDown(1000).delay(400);
     $quiz.slideUp(500).fadeOut(500);
+    $instructions.fadeOut(1000).delay(1000);
+    $toggleInstructions.text("show instructions");
   }
 
   $quizButton.click(showQuiz);
@@ -141,10 +144,10 @@ $( document ).ready(function() {
   $toggleInstructions.click(function(){
 
     if ($toggleInstructions.text() =="dismiss instructions") {
-      $("#instructions").slideUp(500);
+      $instructions.slideUp(500);
       $toggleInstructions.text("show instructions");
     } else {
-      $("#instructions").slideDown(500);
+      $instructions.slideDown(500);
       $toggleInstructions.text("dismiss instructions");
     }
     $numberButton.focus();
