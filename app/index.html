@@ -9,13 +9,25 @@
 <body>
 
 <header>
-<h1>I Numeri Italiani</h1>
+<h1><a href="/">I Numeri Italiani</a></h1>
 </header>
 
 <div class="content">
+
     <div id="quiz">
         <button id="generateNum" autofocus>START</button>
         <br>
+        <br>
+        <div id="instructions">
+            <h2>INSTRUCTIONS</h2>
+            <p>Click the button to generate a new number. After your translation
+                is checked, you may continue to play by clicking the number button.</p>
+            <p>To make the accent in <em>tré</em> on a Mac, enable the Extended US
+                Keyboard and hold down the e key.</p>
+            <p>To make the accent on Windows, you can use the Windows ALT Code
+                (ALT+0233).</p>
+            <button id="dismiss-instructions">dismiss instructions</button>
+        </div>
         <label for="user-response"></label><br>
         <input id="user-response" type="text" placeholder="enter translation here">
         <br>
@@ -29,24 +41,220 @@
     </div>
 
     <div id="lesson">
+        <p>Italian numbers are fairly easy and are fun to say as the vowels roll off your tongue.</p>
+
         <h2>How to Count in Italian</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni mollitia quam recusandae repellendus voluptatem. A eligendi numquam omnis quibusdam quos temporibus vel!
-        </p>
-    <p>
-        Now that you know the rules, are you ready to test your skill?
-    </p>
+        <p>Let's review numbers 1 - 20 first:</p>
+
+        <table>
+          <tr>
+            <th>il<br>numero</th>
+            <th>Italian<br>translation</th>
+            <th>il<br>numero</th>
+            <th>Italian<br>translation</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>uno</td>
+            <td>11</td>
+            <td>undici</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>due</td>
+            <td>12</td>
+            <td>dodici</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>tre</td>
+            <td>13</td>
+            <td>tredici</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>quattro</td>
+            <td>14</td>
+            <td>quattordici</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>cinque</td>
+            <td>15</td>
+            <td>quindici</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>sei</td>
+            <td>16</td>
+            <td>sedici</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>sette</td>
+            <td>17</td>
+            <td>diciassette</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>otto</td>
+            <td>18</td>
+            <td>diciotto</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>nove</td>
+            <td>19</td>
+            <td>diciannove</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>dieci</td>
+            <td>20</td>
+            <td>venti</td>
+          </tr>
+        </table>
+
+        <p>Now, let's count by tens up to 100:</p>
+
+        <table>
+          <tr>
+            <th>il<br>numero</th>
+            <th>Italian<br>translation</th>
+            <th>il<br>numero</th>
+            <th>Italian<br>translation</th>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>dieci</td>
+            <td>60</td>
+            <td>sessanta</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>venti</td>
+            <td>70</td>
+            <td>settanta</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>trenta</td>
+            <td>80</td>
+            <td>ottanta</td>
+          </tr>
+          <tr>
+            <td>40</td>
+            <td>quaranta</td>
+            <td>90</td>
+            <td>novanta</td>
+          </tr>
+          <tr>
+            <td>50</td>
+            <td>cinquanta</td>
+            <td>100</td>
+            <td>cento</td>
+          </tr>
+        </table>
+
+        <h2>The Basic Rules</h2>
+
+            <p>For the numbers 20 through 99, take the number in the tens place (<em>venti</em>,<em>trenta</em>, <em>quaranta</em>, etc) and affix one of the numbers <em>uno</em> through <em>nove</em>.</p>
+            <p>If the number ends in 1 or 8, drop the final vowel from the tens number.</p>
+            <p>If the number ends in 3, <em>tre</em> becomes <em>tré</em>.</p>
 
 
+        <table>
+            <tr>
+                <td>21</td>
+                <td>ventuno</td>
+                <td>22</td>
+                <td>ventidue</td>
+            </tr>
+                <tr>
+                <td>23</td>
+                <td>ventitré</td>
+                <td>24</td>
+                <td>ventiquattro</td>
+            </tr>
+                <tr>
+                <td>55</td>
+                <td>cinquantacinque</td>
+                <td>66</td>
+                <td>sessantasei</td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td>ottantotto</td>
+                <td>89</td>
+                <td>ottantanove</td>
+            </tr>
+        </table>
+
+        <h2>Counting 100 - 999</h2>
+
+        <p>For 100, 200, 300, 400, you add 2, 3, 4, and so forth to <em>cento</em>. (You do not add anything before <em>cento</em> if the number is 100.) Thus, 200 is <em>duecento</em>, 300 is <em>
+            trecento</em>, and 400 is <em>quattrocento</em>. You add the number 1 through 99 to the hundreds value to get the other combinations of numbers:</p>
+
+        <table>
+            <tr>
+                <td>147</td>
+                <td>centoquarantasette</td>
+            </tr>
+            <tr>
+                <td>888</td>
+                <td>ottocentottantotto</td>
+            </tr>
+        </table>
+
+        <p><strong>IMPORTANT!</strong> When <em>cento</em> is followed by <em>otto</em> or <em>ottanta</em>, you drop the <em>o</em> from <em>cento</em>.</p>
+
+        <h2>Counting 1000 - 9999</h2>
+        <p>For numbers above 999, you will use <em>mille</em> for 1000 and
+            <em>mila</em> for 2000 (<em>duemila</em>), 3000 (<em>tremila</em>),
+            4000(<em>quattromila</em>), etc.</p>
+        <p>Numbers are chained together like this:</p>
+
+        <table>
+            <tr>
+                <td>1048</td>
+                <td>millequarantotto</td>
+            </tr>
+            <tr>
+                <td>2194</td>
+                <td>duemilacentonovantaquattro</td>
+            </tr>
+            <tr>
+                <td>8888</td>
+                <td>ottomilaottocentottantotto</td>
+            </tr>
+        </table>
+
+        <h2>More Numbers in Italian</h2>
+        <table>
+            <tr>
+                <td>100,000</td>
+                <td>centomila</td>
+            </tr>
+            <tr>
+                <td>1,000,000</td>
+                <td>un milione</td>
+            </tr>
+            <tr>
+                <td>5,800,000</td>
+                <td>cinque milioni ottocentomila</td>
+            </tr>
+            <tr>
+                <td>1,00,000,000</td>
+                <td>un miliardo</td>
+            </tr>
+        </table>
+        <br>
+        <p>Now that you know the rules, are you ready to test your skill?</p>
+        <p>Try this quiz designed to test your translation prowess with numbers 1 through 9999.</p>
         <button id="quiz-button" class="slide">&nbsp</button>
     </div>
 
 </div>
-
-
-
-
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
