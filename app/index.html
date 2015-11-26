@@ -14,10 +14,13 @@
 
 <div class="content">
 
+  <!----------QUIZ---------->
+
     <div id="quiz">
         <button id="generateNum" autofocus>START</button>
         <br>
-
+        <button id="show-lesson">return to lesson</button>
+        <br>
         <div id="instructions">
           <h2>INSTRUCTIONS</h2>
           <p>Click the button above to generate a new number, then enter your translation in the field below these instructions. After your translation
@@ -37,7 +40,9 @@
             <li>total score<br>&nbsp<span id="total-score">&nbsp 0</span>%</li>
         </ul>
         <button id="reset-scores"><strong>reset game</strong></button>
-    </div>
+    </div> <!-- end quiz -->
+
+<!----------LESSON---------->
 
     <div id="lesson">
         <p>Italian numbers are fairly easy and are fun to say as the vowels roll off your tongue. Let's have a brief lesson before we proceed to the quiz. Or, <a href="#" class="highlight2" id="quiz-jump">jump straight to the quiz!</a></p>
@@ -251,8 +256,7 @@
         <p>Now that you know the rules, are you ready to test your skill?</p>
         <p>Try this quiz designed to test your translation prowess with numbers 1 through 9999.</p>
         <button id="quiz-button" class="slide">&nbsp</button>
-    </div>
-
+    </div>  <!-- end lesson -->
 </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
