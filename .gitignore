@@ -10,7 +10,8 @@ node_modules
 /.sass-cache
 
 # Ignore CSS & Map File
-*.css
+# committing generated .css file in master for deployment to Heroku
+#*.css
 *.map
 
 # OS generated files #
