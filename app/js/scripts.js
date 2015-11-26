@@ -11,7 +11,8 @@ $( document ).ready(function() {
   var $totalScore = $("#total-score");
 
   var $resetButton = $("#reset-scores");
-
+  var $toggleInstructions = $("#toggle-instructions");
+  var $instructions = $("#instructions");
   var numToTranslate;
 
   var numCorrect = 0;
@@ -37,12 +38,25 @@ $( document ).ready(function() {
     return Math.floor(Math.random() * (9999)) + 1;
   }
 
-  /***********REVEALING QUIZ**********/
+  /***********REVEALING QUIZ and LESSON**********/
 
-  $quizButton.click(function() {
+  function showQuiz() {
     $quiz.slideDown(2000).delay(400);
     $lesson.slideUp(2000).fadeOut(1500);
-  });
+  }
+
+  function showLesson() {
+    $lesson.slideDown(1000).delay(400);
+    $quiz.slideUp(500).fadeOut(500);
+    $instructions.fadeOut(1000).delay(1000);
+    $toggleInstructions.text("show instructions");
+  }
+
+  $quizButton.click(showQuiz);
+
+  $("#quiz-jump").click(showQuiz);
+
+  $("#show-lesson").click(showLesson);
 
   /***********GETTING NUMBERS**********/
 
@@ -60,12 +74,12 @@ $( document ).ready(function() {
   /***********GETTING TRANSLATION**********/
 
   function showCorrectAnswer(correctResponse) {
-    $numberButton.html("&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" + correctResponse).removeClass("large-number");
+    $numberButton.html("&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" + "<span class='highlight2'>"+ correctResponse + "</span>").removeClass("large-number");
   }
 
   function submitAnswer() {
     if (!$userResponse.val()) {
-      $userResponse.attr("placeholder", "PLEASE ENTER YOUR TRANSLATION");
+      $userResponse.attr("placeholder", "You must enter a translation!");
       $userResponse.focus();
     } else {
       $userResponse.prop("disabled", true);
@@ -127,8 +141,15 @@ $( document ).ready(function() {
 
     /***********HIDE INSTRUCTIONS**********/
 
-    $("#dismiss-instructions").click(function(){
-      $("#instructions").slideUp(500);
-      $numberButton.focus();
+  $toggleInstructions.click(function(){
+
+    if ($toggleInstructions.text() =="dismiss instructions") {
+      $instructions.slideUp(500);
+      $toggleInstructions.text("show instructions");
+    } else {
+      $instructions.slideDown(500);
+      $toggleInstructions.text("dismiss instructions");
+    }
+    $numberButton.focus();
   });
 });

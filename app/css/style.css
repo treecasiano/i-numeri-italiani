@@ -372,6 +372,9 @@ header {
 h2 {
   color: greenyellow; }
 
+h3 {
+  color: fuchsia; }
+
 em {
   color: greenyellow;
   font-weight: bold;
@@ -428,7 +431,11 @@ a:hover {
   color: yellow !important; }
 
 .wrong-answer {
+  text-decoration: line-through;
   color: fuchsia !important; }
+
+.highlight2 {
+  color: fuchsia; }
 
 #total-score {
   color: white; }
@@ -481,7 +488,6 @@ button:hover {
   height: 100%;
   width: 100%;
   position: absolute;
-  color: fuchsia;
   left: -100%;
   opacity: 0;
   -webkit-transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -522,10 +528,13 @@ th {
 tr {
   border-bottom: 1px solid greenyellow; }
 
+/*----------INSTRUCTIONS---------*/
 #instructions {
-  color: yellow; }
+  color: yellow;
+  display: none; }
 
-#dismiss-instructions {
+#toggle-instructions,
+#show-lesson {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -533,5 +542,5 @@ tr {
   border: none;
   border-bottom: 2.5px dotted greenyellow;
   width: auto;
-  padding: 5px 10px;
-  font-size: 0.75em; }
+  padding: 3px;
+  font-size: 0.65em; }
