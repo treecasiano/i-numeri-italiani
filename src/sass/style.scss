@@ -8,6 +8,7 @@ $primary-text-dark: black;
 $primary-background: yellowgreen;
 $body-background: black;
 $highlight: greenyellow;
+$highlight2: fuchsia;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -19,7 +20,7 @@ $highlight: greenyellow;
 body {
   background: $body-background;
   color: $primary-text-dark;
-  font: 125% $font-stack;
+  font: 135% $font-stack;
   padding-top: 125px;
 }
 
@@ -34,6 +35,12 @@ header {
 
 h2 {
   color: $highlight;
+}
+
+em {
+  color: $highlight;
+  font-weight: bold;
+  font-family: monospace;
 }
 ul {
   list-style-type: none;
@@ -91,7 +98,7 @@ a:hover {
 }
 
 .wrong-answer {
-  color: fuchsia !important;
+  color: $highlight2 !important;
 }
 
 #total-score {
@@ -102,12 +109,17 @@ a:hover {
 button {
   @include border-radius(25px);
   background: none;
-  border: 1px solid $primary-text-light;
+  border: 1px solid $highlight;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   color: $primary-text-light;
   cursor: pointer;
   margin: 0;
   outline: none;
   overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
   width: 350px;
   z-index: 1;
@@ -121,7 +133,12 @@ button {
 }
 
 button:focus {
-  border: 8px solid $primary-text-light;
+  border: solid $highlight2;
+}
+
+button:hover {
+  background: $highlight;
+  color: $primary-text-dark;
 }
 
 .slide:after{
@@ -139,7 +156,7 @@ button:focus {
   height:100%;
   width:100%;
   position:absolute;
-  color:$primary-text-light;
+  color:$highlight2;
   left:-100%;
   opacity: 0;
   -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
@@ -191,7 +208,15 @@ tr {
   border-bottom: 1px solid $highlight;
 }
 
-
 #instructions {
-  display: none;
+  color: yellow;
+}
+
+#dismiss-instructions {
+  @include border-radius(0);
+  border: none;
+  border-bottom: 2.5px dotted $highlight;
+  width: auto;
+  padding: 5px 10px;
+  font-size: 0.75em;
 }
