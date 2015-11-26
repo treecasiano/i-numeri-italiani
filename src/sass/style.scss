@@ -7,6 +7,7 @@ $primary-text-light: yellowgreen;
 $primary-text-dark: black;
 $primary-background: yellowgreen;
 $body-background: black;
+$highlight: greenyellow;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -19,7 +20,7 @@ body {
   background: $body-background;
   color: $primary-text-dark;
   font: 125% $font-stack;
-  padding-top: 150px;
+  padding-top: 125px;
 }
 
 header {
@@ -31,6 +32,9 @@ header {
   width: 100%;
 }
 
+h2 {
+  color: $highlight;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -41,7 +45,15 @@ li {
   text-transform: uppercase;
   font-weight: bold;
   padding: 10px;
+}
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: $highlight;
 }
 
 .content {
@@ -50,9 +62,7 @@ li {
   color: $primary-text-light;
   margin: 5px auto;
   padding: 10px;
-  position: relative;
   text-align: center;
-  top: 30px;
   width: 80%;
 }
 
@@ -159,4 +169,29 @@ button:focus {
   font-size: 2.5em;
 }
 
+/*----------TABLE STYLES---------*/
 
+table {
+  margin: auto;
+  background: $primary-background;
+  color: black;
+  border: 10px double $highlight;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+th {
+  font-weight: bold;
+}
+
+tr {
+  border-bottom: 1px solid $highlight;
+}
+
+
+#instructions {
+  display: none;
+}
