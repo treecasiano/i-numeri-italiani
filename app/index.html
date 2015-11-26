@@ -14,105 +14,109 @@
 
 <div class="content">
 
+  <!----------QUIZ---------->
+
     <div id="quiz">
         <button id="generateNum" autofocus>START</button>
         <br>
+        <button id="show-lesson">return to lesson</button>
         <br>
         <div id="instructions">
-            <h2>INSTRUCTIONS</h2>
-            <p>Click the button to generate a new number. After your translation
-                is checked, you may continue to play by clicking the number button.</p>
-            <p>To make the accent in <em>tré</em> on a Mac, enable the Extended US
-                Keyboard and hold down the e key.</p>
-            <p>To make the accent on Windows, you can use the Windows ALT Code
-                (ALT+0233).</p>
-            <button id="dismiss-instructions">dismiss instructions</button>
+          <h2>INSTRUCTIONS</h2>
+          <p>Click the button above to generate a new number, then enter your translation in the field below these instructions. After your translation
+              is checked, you may continue to play by clicking the same button.</p>
+          <h3>Creating Accented Characters</h3>
+          <p><em><strong>Mac:</strong></em><br>The easiest way to make the accent in <em>tré</em> is to enable the Extended US Keyboard. Hold down the <em>e</em> key and select 2 from the menu that pops up.</p>
+          <p><em><strong>Windows:</strong></em><br>Use the Windows ALT Code (ALT+0233).</p>
         </div>
+        <button id="toggle-instructions">show instructions</button>
         <label for="user-response"></label><br>
         <input id="user-response" type="text" placeholder="enter translation here">
         <br>
         <button id="submitTranslation">check answer</button>
         <ul>
             <li>correct<br><span id="correct-answer" class="correct-answer">0</span></li>
-            <li>incorrect<br><span id="wrong-answer" class="wrong-answer">0</span></li>
+            <li>incorrect<br><span id="wrong-answer" class="highlight2">0</span></li>
             <li>total score<br>&nbsp<span id="total-score">&nbsp 0</span>%</li>
         </ul>
         <button id="reset-scores"><strong>reset game</strong></button>
-    </div>
+    </div> <!-- end quiz -->
+
+<!----------LESSON---------->
 
     <div id="lesson">
-        <p>Italian numbers are fairly easy and are fun to say as the vowels roll off your tongue.</p>
+        <p>Italian numbers are fairly easy and are fun to say as the vowels roll off your tongue. Let's have a brief lesson before we proceed to the quiz. Or, <a href="#" class="highlight2" id="quiz-jump">jump straight to the quiz!</a></p>
 
         <h2>How to Count in Italian</h2>
         <p>Let's review numbers 1 - 20 first:</p>
 
         <table>
-          <tr>
-            <th>il<br>numero</th>
-            <th>Italian<br>translation</th>
-            <th>il<br>numero</th>
-            <th>Italian<br>translation</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>uno</td>
-            <td>11</td>
-            <td>undici</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>due</td>
-            <td>12</td>
-            <td>dodici</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>tre</td>
-            <td>13</td>
-            <td>tredici</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>quattro</td>
-            <td>14</td>
-            <td>quattordici</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>cinque</td>
-            <td>15</td>
-            <td>quindici</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>sei</td>
-            <td>16</td>
-            <td>sedici</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>sette</td>
-            <td>17</td>
-            <td>diciassette</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>otto</td>
-            <td>18</td>
-            <td>diciotto</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>nove</td>
-            <td>19</td>
-            <td>diciannove</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>dieci</td>
-            <td>20</td>
-            <td>venti</td>
-          </tr>
+            <tr>
+                <th>il<br>numero</th>
+                <th>Italian<br>translation</th>
+                <th>il<br>numero</th>
+                <th>Italian<br>translation</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>uno</td>
+                <td>11</td>
+                <td>undici</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>due</td>
+                <td>12</td>
+                <td>dodici</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>tre</td>
+                <td>13</td>
+                <td>tredici</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>quattro</td>
+                <td>14</td>
+                <td>quattordici</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>cinque</td>
+                <td>15</td>
+                <td>quindici</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>sei</td>
+                <td>16</td>
+                <td>sedici</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>sette</td>
+                <td>17</td>
+                <td>diciassette</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>otto</td>
+                <td>18</td>
+                <td>diciotto</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>nove</td>
+                <td>19</td>
+                <td>diciannove</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>dieci</td>
+                <td>20</td>
+                <td>venti</td>
+            </tr>
         </table>
 
         <p>Now, let's count by tens up to 100:</p>
@@ -252,8 +256,7 @@
         <p>Now that you know the rules, are you ready to test your skill?</p>
         <p>Try this quiz designed to test your translation prowess with numbers 1 through 9999.</p>
         <button id="quiz-button" class="slide">&nbsp</button>
-    </div>
-
+    </div>  <!-- end lesson -->
 </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
