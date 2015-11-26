@@ -23,6 +23,7 @@ $( document ).ready(function() {
   var wrongAnswers = [];
 
   $translateButton.prop("disabled", true);
+  $quiz.hide();
 
   /***********UTILITY FUNCTIONS**********/
 
@@ -41,8 +42,9 @@ $( document ).ready(function() {
   /***********REVEALING QUIZ and LESSON**********/
 
   function showQuiz() {
-    $quiz.slideDown(2000).delay(400);
-    $lesson.slideUp(2000).fadeOut(1500);
+    $quiz.slideDown(1000).delay(400);
+    $lesson.slideUp(500).fadeOut(500);
+    $("footer").hide();
   }
 
   function showLesson() {
@@ -50,6 +52,7 @@ $( document ).ready(function() {
     $quiz.slideUp(500).fadeOut(500);
     $instructions.fadeOut(1000).delay(1000);
     $toggleInstructions.text("show instructions");
+    $("footer").show();
   }
 
   $quizButton.click(showQuiz);

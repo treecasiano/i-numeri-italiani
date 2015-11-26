@@ -409,9 +409,6 @@ a:hover {
   text-align: center;
   width: 80%; }
 
-#quiz {
-  display: none; }
-
 #user-response {
   background: black;
   -webkit-box-sizing: border-box;
@@ -453,14 +450,13 @@ button {
   box-sizing: border-box;
   color: yellowgreen;
   cursor: pointer;
-  margin: 0;
+  margin: 5px;
+  padding-bottom: 30px;
   outline: none;
   overflow: hidden;
-  padding-top: 10px;
-  padding-bottom: 10px;
   position: relative;
   width: 350px;
-  z-index: 1;
+  height: 35px;
   transition: 0.08s ease-in;
   -o-transition: 0.08s ease-in;
   -ms-transition: 0.08s ease-in;
@@ -544,3 +540,13 @@ tr {
   width: auto;
   padding: 3px;
   font-size: 0.65em; }
+
+footer {
+  background: yellowgreen;
+  margin: 0;
+  padding: 20px;
+  text-align: center; }
+  footer a {
+    color: fuchsia;
+    font-weight: bold;
+    letter-spacing: 1px; }
