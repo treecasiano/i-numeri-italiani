@@ -48,7 +48,7 @@ $( document ).ready(function() {
 
   $numberButton.click(function() {
     $numberButton.text(generateNumber());
-    $numberButton.addClass('large-number');
+    $numberButton.addClass("large-number");
     numToTranslate = $numberButton.text();
     $translateButton.prop('disabled', false);
     $userResponse.prop('disabled', false);
@@ -58,6 +58,10 @@ $( document ).ready(function() {
   });
 
   /***********GETTING TRANSLATION**********/
+
+  function showCorrectAnswer(correctResponse) {
+    $numberButton.html("&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" + correctResponse).removeClass("large-number");
+  }
 
   function submitAnswer() {
     if (!$userResponse.val()) {
@@ -70,24 +74,21 @@ $( document ).ready(function() {
       };
 
       $.post("translate", request, function(response) {
-      $translateButton.text(response.translation);
       console.log(response.translation);
       numQuizzed ++;
 
     /***********SCORING**********/
-      if ($userResponse.val() == response.translation) {
+      if ($userResponse.val().toLowerCase() == response.translation) {
         $userResponse.addClass("correct-answer");
-        $translateButton.text("CORRECT!");
+        $numberButton.text("CORRECT!");
         numCorrect ++;
         $correctAnswer.text(String(numCorrect));
-
       } else {
         $userResponse.addClass("wrong-answer");
-        $translateButton.text("INCORRECT ANSWER!");
         numWrong ++;
         $wrongAnswer.text(String(numWrong));
         wrongAnswers.push(numToTranslate);
-        console.log(wrongAnswers);
+        showCorrectAnswer(response.translation);
       }
 
       var score = Math.round((numCorrect/numQuizzed) * 100);
@@ -127,6 +128,7 @@ $( document ).ready(function() {
     /***********HIDE INSTRUCTIONS**********/
 
     $("#dismiss-instructions").click(function(){
-    $("#instructions").slideUp(500);
+      $("#instructions").slideUp(500);
+      $numberButton.focus();
   });
 });
