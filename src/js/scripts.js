@@ -43,7 +43,7 @@ $( document ).ready(function() {
     $quiz.slideDown(2000).delay(400);
     $lesson.slideUp(2000).fadeOut(1500);
   }
-  
+
   function showLesson() {
     $lesson.slideDown(1000).delay(400);
     $quiz.slideUp(500).fadeOut(500);
