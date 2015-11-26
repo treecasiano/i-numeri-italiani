@@ -21,7 +21,7 @@ $( document ).ready(function() {
 
   var wrongAnswers = [];
 
-  $translateButton.prop('disabled', true);
+  $translateButton.prop("disabled", true);
 
   /***********UTILITY FUNCTIONS**********/
 
@@ -64,7 +64,7 @@ $( document ).ready(function() {
       $userResponse.attr("placeholder", "PLEASE ENTER YOUR TRANSLATION");
       $userResponse.focus();
     } else {
-      $userResponse.prop('disabled', true);
+      $userResponse.prop("disabled", true);
       var request = {
       text: numToTranslate
       };
@@ -92,7 +92,7 @@ $( document ).ready(function() {
 
       var score = Math.round((numCorrect/numQuizzed) * 100);
       $totalScore.text(String(score));
-      $translateButton.prop('disabled', true);
+      $translateButton.prop("disabled", true);
       });
     }
   }
@@ -108,6 +108,7 @@ $( document ).ready(function() {
       this.blur();
     }
   });
+
   /***********RESETTING SCORES**********/
 
   $resetButton.click(function(){
@@ -119,8 +120,13 @@ $( document ).ready(function() {
     $correctAnswer.text(String(numCorrect));
     $wrongAnswer.text(String(numWrong));
     $numberButton.text("START");
-    $translateButton.html("check answer");
-    $userResponse.val("").removeClass("wrong-answer correct-answer");
+    $translateButton.html("check answer").prop("disabled", true);
+    $userResponse.val("").removeClass("wrong-answer correct-answer").prop("disabled", true);
   });
 
+    /***********HIDE INSTRUCTIONS**********/
+
+    $("#dismiss-instructions").click(function(){
+    $("#instructions").slideUp(500);
+  });
 });
