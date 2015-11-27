@@ -13,13 +13,13 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   gulp.src('src/js/**/*.js')
-  .pipe(concat('scripts.js'))
-  .pipe(gulp.dest('./app/js/'))
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(gulp.dest('./app/js/'));
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('./app/js/'))
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./app/js/'));
 });
 
 gulp.task('watch', function() {
