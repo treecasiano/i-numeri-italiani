@@ -1,7 +1,6 @@
 /*.env
 
 # Logs
-logs
 *.log
 npm-debug.log
 
@@ -15,7 +14,6 @@ npm-debug.log
 # Ignore CSS & Map File
  committing generated .css file in master for deployment to Heroku
 *.css
-*.map
 
 # Ignore js generated with gulp
 app/js/*.js
