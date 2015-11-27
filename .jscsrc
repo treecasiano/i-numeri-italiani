@@ -1,0 +1,5 @@
+{
+  "preset": "jquery",
+  "maxErrors": null,
+  "validateQuoteMarks": { "mark": "\"", "escape": true }
+}
