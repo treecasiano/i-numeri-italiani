@@ -1,7 +1,7 @@
-var express = require("express");
+var express = require('express');
 var app = express();
 var path = require("path");
-var bodyparser = require("body-parser");
+var bodyparser = require('body-parser');
 var translate = require('./lib/translate');
 var port = process.env.PORT || 3000;
 
