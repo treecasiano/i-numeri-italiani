@@ -13,9 +13,12 @@ npm-debug.log
 /.sass-cache
 
 # Ignore CSS & Map File
-# committing generated .css file in master for deployment to Heroku
-#*.css
+ committing generated .css file in master for deployment to Heroku
+*.css
 *.map
+
+# Ignore js generated with gulp
+app/js/*.js
 
 # OS generated files #
 ######################
