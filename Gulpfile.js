@@ -7,21 +7,17 @@ var mocha = require( "gulp-mocha" );
 var browserSync = require( "browser-sync" );
 var minify = require( "gulp-minify-css" );
 
-gulp.task( "styles", function() {
-  gulp.src( "src/sass/**/*.scss" )
+function processSass() {
+    return gulp.src( "src/sass/**/*.scss" )
     .pipe( sass().on( "error", sass.logError ) )
     .pipe( minify() )
     .pipe( rename( {
       suffix: ".min"
     } ) )
-    .pipe( gulp.dest( "./app/css/" ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
-} );
-
-gulp.task( "scripts", function() {
-  gulp.src( "src/js/**/*.js" )
+    .pipe( gulp.dest( "./app/css/" ) );
+}
+function processJS() {
+  return gulp.src( "src/js/**/*.js" )
     .pipe( concat( "scripts.js" ) )
     .pipe( gulp.dest( "./app/js/" ) )
     .pipe( uglify() )
@@ -29,9 +25,31 @@ gulp.task( "scripts", function() {
       suffix: ".min"
     } ) )
     .pipe( gulp.dest( "./app/js/" ) );
+}
+
+gulp.task( "styles", function() {
+  processSass();
 } );
 
-gulp.task( "watch", [ "browserSync", "tests", "styles", "scripts" ], function() {
+gulp.task( "styles-dev", function() {
+  processSass()
+    .pipe( browserSync.reload( {
+      stream: true
+    } ) );
+} );
+
+gulp.task( "scripts", function() {
+  processJS();
+} );
+
+gulp.task( "scripts-dev", function() {
+  processJS()
+    .pipe( browserSync.reload( {
+      stream: true
+    } ) );
+} );
+
+gulp.task( "watch", [ "browserSync", "tests", "styles-dev", "scripts-dev" ], function() {
   gulp.watch( "src/js/**/*.js", [ "scripts" ] );
   gulp.watch( "src/sass/*.scss", [ "styles" ] );
 } );
