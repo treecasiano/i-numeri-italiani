@@ -1,9 +1,10 @@
 $( document ).ready( function() {
-  var $numberButton = $( "#generateNum" );
+  var $displayBox = $( "#display-box" );
+  var $getNumber = $( "#get-number" );
   var $quiz = $( "#quiz" );
   var $quizButton = $( "#quiz-button" );
   var $lesson = $( "#lesson" );
-  var $translateButton = $( "#submitTranslation" );
+  var $translateButton = $( "#submit-translation" );
   var $userResponse = $( "#user-response" );
 
   var $correctAnswer = $( "#correct-answer" );
@@ -42,7 +43,8 @@ $( document ).ready( function() {
   /***********REVEALING QUIZ and LESSON**********/
 
   function showQuiz() {
-    $quiz.slideDown( 1000 ).delay( 400 );
+
+    $quiz.slideDown( 1000 ).delay( 300 );
     $lesson.slideUp( 500 ).fadeOut( 500 );
     $( "footer" ).hide();
   }
@@ -63,10 +65,10 @@ $( document ).ready( function() {
 
   /***********GETTING NUMBERS**********/
 
-  $numberButton.click( function() {
-    $numberButton.text( generateNumber() );
-    $numberButton.addClass( "large-number" );
-    numToTranslate = $numberButton.text();
+  $getNumber.click( function() {
+    $displayBox.text( generateNumber() );
+    $displayBox.addClass( "large-number" );
+    numToTranslate = $displayBox.text();
     $translateButton.prop( "disabled", false );
     $userResponse.prop( "disabled", false );
     $translateButton.html( "check answer" );
@@ -77,7 +79,7 @@ $( document ).ready( function() {
   /***********GETTING TRANSLATION**********/
 
   function showCorrectAnswer( correctResponse ) {
-    $numberButton.html( "&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" +
+    $displayBox.html( "&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" +
       "<span class='highlight2'>" +
       correctResponse + "</span>" )
       .removeClass( "large-number" );
@@ -94,13 +96,13 @@ $( document ).ready( function() {
       };
 
       $.post( "translate", request, function( response ) {
-      console.log( response.translation );
-      numQuizzed++;
+        console.log( response.translation );
+        numQuizzed++;
 
     /***********SCORING**********/
       if ( $userResponse.val().toLowerCase() == response.translation ) {
         $userResponse.addClass( "correct-answer" );
-        $numberButton.text( "CORRECT!" );
+        $displayBox.text( "CORRECT!" );
         numCorrect++;
         $correctAnswer.text( String( numCorrect ) );
       } else {
@@ -123,7 +125,7 @@ $( document ).ready( function() {
   $userResponse.keypress( function( e ) {
     if ( e.which == 13 ) {
       if ( $userResponse ) {
-        $numberButton.focus();
+        $getNumber.focus();
       }
       submitAnswer();
       this.blur();
@@ -140,7 +142,7 @@ $( document ).ready( function() {
     $totalScore.text( String( score ) );
     $correctAnswer.text( String( numCorrect ) );
     $wrongAnswer.text( String( numWrong ) );
-    $numberButton.text( "START" );
+    $displayBox.text( "" );
     $translateButton.html( "check answer" ).prop( "disabled", true );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
   } );
@@ -156,6 +158,6 @@ $( document ).ready( function() {
       $instructions.slideDown( 500 );
       $toggleInstructions.text( "dismiss instructions" );
     }
-    $numberButton.focus();
+    $displayBox.focus();
   } );
 } );
