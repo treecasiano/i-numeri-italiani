@@ -12,7 +12,8 @@ $( document ).ready( function() {
   var $totalScore = $( "#total-score" );
 
   var $resetButton = $( "#reset-scores" );
-  var $toggleInstructions = $( "#toggle-instructions" );
+  var $showInstructions = $( "#show-instructions" );
+  var $hideInstructions = $( "#hide-instructions" );
   var $instructions = $( "#instructions" );
   var numToTranslate;
 
@@ -25,6 +26,7 @@ $( document ).ready( function() {
 
   $translateButton.prop( "disabled", true );
   $quiz.hide();
+  $instructions.hide();
 
   /***********UTILITY FUNCTIONS**********/
 
@@ -53,7 +55,7 @@ $( document ).ready( function() {
     $lesson.slideDown( 1000 ).delay( 400 );
     $quiz.slideUp( 500 ).fadeOut( 500 );
     $instructions.fadeOut( 1000 ).delay( 1000 );
-    $toggleInstructions.text( "show instructions" );
+    $showInstructions.text( "show instructions" );
     $( "footer" ).show();
   }
 
@@ -74,6 +76,7 @@ $( document ).ready( function() {
     $translateButton.html( "check answer" );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" );
     $userResponse.focus();
+    $userResponse.attr( "placeholder", "enter translation here" );
   } );
 
   /***********GETTING TRANSLATION**********/
@@ -87,7 +90,7 @@ $( document ).ready( function() {
 
   function submitAnswer() {
     if ( !$userResponse.val() ) {
-      $userResponse.attr( "placeholder", "You must enter a translation!" );
+      $userResponse.attr( "placeholder", "ENTER A RESPONSE" );
       $userResponse.focus();
     } else {
       $userResponse.prop( "disabled", true );
@@ -145,19 +148,17 @@ $( document ).ready( function() {
     $displayBox.text( "" );
     $translateButton.html( "check answer" ).prop( "disabled", true );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
+    $getNumber.focus();
   } );
 
     /***********HIDE INSTRUCTIONS**********/
 
-  $toggleInstructions.click( function() {
-
-    if ( $toggleInstructions.text() == "dismiss instructions" ) {
-      $instructions.slideUp( 500 );
-      $toggleInstructions.text( "show instructions" );
-    } else {
-      $instructions.slideDown( 500 );
-      $toggleInstructions.text( "dismiss instructions" );
-    }
-    $displayBox.focus();
+  $showInstructions.click( function() {
+    $instructions.show();
   } );
+
+  $hideInstructions.click( function() {
+    $instructions.hide();
+  } );
+
 } );

@@ -22,6 +22,7 @@ body {
   color: $primary-text-dark;
   font: 135% $font-stack;
   padding-top: 125px;
+  position: relative;
 }
 
 header {
@@ -220,11 +221,26 @@ tr {
 /*----------INSTRUCTIONS---------*/
 
 #instructions {
-  color: yellow;
-  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.7);
 }
 
-#toggle-instructions,
+#instructions-div {
+  background: black;
+  color: yellow;
+  left: 0;
+  margin: auto;
+  padding: 0 25px 35px 25px;
+  position: relative;
+  right: 0;
+  top: 100px;
+  max-width: 600px;
+}
+
+#show-instructions,
 #show-lesson {
   @include border-radius(0);
   border: none;
