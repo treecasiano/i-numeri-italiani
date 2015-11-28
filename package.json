@@ -4,9 +4,7 @@
   "description": "flashcard app for learning Italian numbers",
   "main": "index.js",
   "scripts": {
-    "test": "gulp tests",
-    "start": "node app.js",
-    "postinstall": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
