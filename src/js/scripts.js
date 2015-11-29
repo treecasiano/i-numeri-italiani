@@ -49,6 +49,7 @@ $( document ).ready( function() {
     $quiz.slideDown( 1000 ).delay( 300 );
     $lesson.slideUp( 500 ).fadeOut( 500 );
     $( "footer" ).hide();
+    $( "header").hide();
   }
 
   function showLesson() {
@@ -57,6 +58,7 @@ $( document ).ready( function() {
     $instructions.fadeOut( 1000 ).delay( 1000 );
     $showInstructions.text( "show instructions" );
     $( "footer" ).show();
+    $( "header" ).slideDown( 1000 ).delay( 400 );
   }
 
   $quizButton.click( showQuiz );
