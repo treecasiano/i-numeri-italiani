@@ -17,9 +17,9 @@
   <!----------QUIZ---------->
 
     <div id="quiz">
-        <div id="display-box" >&nbsp</div>
+        <div id="display-box" class="display">&nbsp</div>
         <label for="user-response"></label><br>
-        <input id="user-response" type="text" placeholder="enter translation here">
+        <input id="user-response" class="response" type="text" placeholder="enter translation here">
         <br>
         <button id="get-number" autofocus>get number</button>
         <button id="submit-translation">check answer</button>
@@ -27,15 +27,11 @@
         <ul>
             <li>correct<br><span id="correct-answer" class="correct-answer">0</span></li>
             <li>incorrect<br><span id="wrong-answer" class="highlight2">0</span></li>
-            <li>total score<br>&nbsp<span id="total-score">&nbsp 0</span>%</li>
+            <li>total score<br>&nbsp<span id="total-score" class="total-score">&nbsp 0</span>%</li>
         </ul>
-        <button id="show-lesson">return to lesson</button>
-        <button id="show-instructions">show instructions</button>
+        <button id="show-lesson" class="small-buttons">return to lesson</button>
+        <button id="show-instructions" class="small-buttons">show instructions</button>
     </div> <!-- end quiz -->
-
-  <!----------INSTRUCTIONS---------->
-
-
 
 
 <!----------LESSON---------->
@@ -256,8 +252,12 @@
 </div>
 
 
-    <div id="instructions">
-      <div id="instructions-div">
+  <!----------INSTRUCTIONS---------->
+
+
+
+    <div id="instructions-overlay" class="instructions-overlay">
+      <div id="instructions-div" class="instructions-text">
         <h2>INSTRUCTIONS</h2>
         <p>Click the button above to generate a new number, then enter your translation in the field below these instructions. After your translation is checked, you may continue to play by clicking the same button.</p>
         <h3>Creating Accented Characters</h3>
