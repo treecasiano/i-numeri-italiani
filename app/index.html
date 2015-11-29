@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>I Numeri</title>
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.min.css">
@@ -24,7 +25,14 @@
       <!----------QUIZ---------->
 
         <div id="quiz">
-            <button id="show-instructions" class="small-buttons">show instructions</button>
+            <ul>
+                <li>right<br><span id="correct-answer" class="correct-answer-score">0
+                </span></li>
+                <li>wrong
+                    <br><span id="wrong-answer" class="wrong-answer-score">0</span></li>
+                <li>score<br>&nbsp<span id="total-score" class="total-score">&nbsp
+                    0</span>%</li>
+            </ul>
             <div id="display-box" class="display">&nbsp</div>
             <label for="user-response"></label><br>
             <input id="user-response" class="response" type="text" placeholder="enter translation here">
@@ -32,11 +40,9 @@
             <button id="get-number" autofocus>get number</button>
             <button id="submit-translation">check answer</button>
             <button id="reset-scores">start over</button>
-            <ul>
-                <li>correct<br><span id="correct-answer" class="correct-answer-score">0</span></li>
-                <li>incorrect<br><span id="wrong-answer" class="wrong-answer-score">0</span></li>
-                <li>total score<br>&nbsp<span id="total-score" class="total-score">&nbsp 0</span>%</li>
-            </ul>
+            <br>
+            <button id="show-instructions" class="small-buttons">show instructions</button>
+
         </div> <!-- end quiz -->
 
 
