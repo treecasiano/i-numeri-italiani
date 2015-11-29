@@ -2,7 +2,8 @@
 
 $font-stack:    Dosis, sans-serif;
 
-// ---------------COLORS----------------
+// ---------------COLORS-------------------------
+
 $primary-text-light: #9acd32;
 $primary-text-dark: #000;
 $primary-background: #9acd32;
@@ -14,6 +15,9 @@ $white: #fff;
 $black: #000;
 $overlay-background: rgba(0, 0, 0, 0.7);
 
+
+// ---------------MIXINS-------------------------
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -23,20 +27,53 @@ $overlay-background: rgba(0, 0, 0, 0.7);
 
 body {
   background: $body-background;
+  box-sizing: border-box;
   color: $primary-text-dark;
   font: 135% $font-stack;
-  padding-top: 125px;
-  position: relative;
+  //position: relative;
 }
+
+// ---------------LIST STYLES--------------------
+
+ul {
+  letter-spacing: 4px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  font-weight: bold;
+  min-width: 100px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+// ----------HEADER & NAVIGATION-----------------
 
 header {
   background: $primary-background;
+  box-sizing: border-box;
   color: $primary-text-dark;
-  position: absolute;
+  margin: 0;
+  min-height: 75px;
+  padding: 10px;
   text-align: center;
   top: 0;
   width: 100%;
 }
+
+nav {
+  background: $highlight2;
+  height: 50px;
+  margin: 0;
+  padding:0;
+  text-align: center;
+  width: 100%;
+}
+
+// ----------HEADINGS----------------------------
 
 h2 {
   color: $highlight;
@@ -46,23 +83,15 @@ h3 {
   color: $highlight2;
 }
 
+// ----------TEXT STYLES-------------------------
+
 em {
   color: $highlight;
   font-family: monospace;
   font-weight: bold;
 }
 
-ul {
-  letter-spacing: 4px;
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  font-weight: bold;
-  padding: 10px;
-  text-transform: uppercase;
-}
+// ----------LINK STYLES-------------------------
 
 a {
   color: $black;
@@ -72,6 +101,8 @@ a {
 a:hover {
   color: $highlight;
 }
+
+// ----------MAIN CONTENT-------------------------
 
 .content {
   @include border-radius(10px);
@@ -98,21 +129,32 @@ a:hover {
   text-align: center;
 }
 
-.correct-answer {
+
+// ----------SCORE STYLES-------------------------
+
+.correct-answer,
+.correct-answer-score {
   color: $yellow;
 }
 
-.wrong-answer {
+.wrong-answer,
+.wrong-answer-score {
   color: $highlight2;
-  text-decoration: line-through;
+
 }
 
-.highlight2 {
-  color: $highlight2;
+.wrong-answer {
+  text-decoration: line-through;
 }
 
 .total-score {
   color: $white;
+}
+
+.correct-answer-score,
+.wrong-answer-score,
+.total-score {
+  font-size: 2em;
 }
 
 // ----------BUTTON STYLES---------
@@ -121,20 +163,19 @@ button {
   @include border-radius(25px);
   background: none;
   border: 1px solid $highlight;
-  box-sizing: border-box;
   color: $primary-text-light;
   cursor: pointer;
-  font-size: 0.6em;
-  height: 35px;
   margin: 5px;
+  min-height: 35px;
+  min-width: 125px;
   outline: none;
   overflow: hidden;
+  padding: 10px;
   position: relative;
-  transition: 0.08s ease-in;
   -moz-transition:    0.08s ease-in;
   -o-transition:      0.08s ease-in;
   -webkit-transition: 0.08s ease-in;
-  width: 100px;
+  transition: 0.08s ease-in;
 
 }
 
@@ -145,6 +186,18 @@ button:focus {
 button:hover {
   background: $highlight;
   color: $primary-text-dark;
+}
+
+.small-buttons {
+  @include border-radius(0);
+  border: 0;
+  width: auto;
+}
+
+// button animation
+
+.slide {
+  min-width: 200px;
 }
 
 .slide::after {
@@ -182,6 +235,8 @@ button:hover {
   opacity:0;
 }
 
+// ----------FEEDBACK DISPLAY--------------------
+
 .display {
   margin: 0 auto;
   max-width: 300px;
@@ -195,7 +250,7 @@ button:hover {
   font-size: 2.5em;
 }
 
-// ----------TABLE STYLES---------
+// ----------TABLE STYLES------------------------
 
 table {
   background: $primary-background;
@@ -217,7 +272,7 @@ tr {
   border-bottom: 1px solid $highlight;
 }
 
-// ----------INSTRUCTIONS---------
+// ----------INSTRUCTIONS------------------------
 
 .instructions-overlay {
   background-color: $overlay-background;
@@ -233,23 +288,18 @@ tr {
   left: 0;
   margin: auto;
   max-width: 600px;
-  padding: 0 25px 35px;
+  padding: 10px 35px 50px;
   position: relative;
   right: 0;
-  top: 100px;
+  top: 125px;
 }
 
-.small-buttons {
-  @include border-radius(0);
-  border: 0;
-  font-size: 0.65em;
-  width: auto;
-}
+// ----------FOOTER------------------------------
 
 footer {
   background: $primary-background;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 
   a {
