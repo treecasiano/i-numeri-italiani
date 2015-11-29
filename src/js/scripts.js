@@ -49,7 +49,7 @@ $( document ).ready( function() {
     $quiz.slideDown( 1000 ).delay( 300 );
     $lesson.slideUp( 500 ).fadeOut( 500 );
     $( "footer" ).hide();
-    $( "header").hide();
+    $( "header" ).slideUp( 1000 ).delay( 400 );
   }
 
   function showLesson() {
@@ -85,7 +85,7 @@ $( document ).ready( function() {
 
   function showCorrectAnswer( correctResponse ) {
     $displayBox.html( "&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" +
-      "<span class='highlight2'>" +
+      "<span class='answer-feedback'>" +
       correctResponse + "</span>" )
       .removeClass( "large-number" );
   }
