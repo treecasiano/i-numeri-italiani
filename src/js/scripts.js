@@ -14,7 +14,7 @@ $( document ).ready( function() {
   var $resetButton = $( "#reset-scores" );
   var $showInstructions = $( "#show-instructions" );
   var $hideInstructions = $( "#hide-instructions" );
-  var $instructions = $( "#instructions" );
+  var $instructions = $( "#instructions-overlay" );
   var numToTranslate;
 
   var numCorrect = 0;
