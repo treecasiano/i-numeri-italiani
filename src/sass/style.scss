@@ -29,14 +29,12 @@ body {
   background: $body-background;
   box-sizing: border-box;
   color: $primary-text-dark;
-  font: 135% $font-stack;
-  //position: relative;
+  font: 105% $font-stack;
 }
 
 // ---------------LIST STYLES--------------------
 
 ul {
-  letter-spacing: 4px;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -45,8 +43,8 @@ ul {
 li {
   display: inline-block;
   font-weight: bold;
-  min-width: 100px;
-  padding: 10px;
+  min-width: 50px;
+  padding: 8px;
   text-transform: uppercase;
 }
 
@@ -57,8 +55,7 @@ header {
   box-sizing: border-box;
   color: $primary-text-dark;
   margin: 0;
-  min-height: 75px;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   top: 0;
   width: 100%;
@@ -66,7 +63,7 @@ header {
 
 nav {
   background: $highlight2;
-  height: 50px;
+  height: 40px;
   margin: 0;
   padding:0;
   text-align: center;
@@ -74,9 +71,13 @@ nav {
 }
 
 // ----------HEADINGS----------------------------
+h1 {
+  font-size: 24px;
+}
 
 h2 {
   color: $highlight;
+  font-size: 22px;
 }
 
 h3 {
@@ -154,7 +155,11 @@ a:hover {
 .correct-answer-score,
 .wrong-answer-score,
 .total-score {
-  font-size: 2em;
+  font-size: 1.25em;
+}
+
+.answer-feedback {
+  color: $yellow;
 }
 
 // ----------BUTTON STYLES---------
@@ -165,12 +170,13 @@ button {
   border: 1px solid $highlight;
   color: $primary-text-light;
   cursor: pointer;
+  font-size: 0.9em;
   margin: 5px;
   min-height: 35px;
   min-width: 125px;
   outline: none;
   overflow: hidden;
-  padding: 10px;
+  padding: 3px;
   position: relative;
   -moz-transition:    0.08s ease-in;
   -o-transition:      0.08s ease-in;
@@ -240,14 +246,14 @@ button:hover {
 .display {
   margin: 0 auto;
   max-width: 300px;
-  min-height: 100px;
+  min-height: 90px;
   min-width: 100px;
-  padding: 35px 0 0;
+  padding: 15px 0 0;
 }
 
 .large-number {
   color: $highlight2;
-  font-size: 2.5em;
+  font-size: 4em;
 }
 
 // ----------TABLE STYLES------------------------
