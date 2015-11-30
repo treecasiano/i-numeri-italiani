@@ -29,7 +29,7 @@ body {
   background: $body-background;
   box-sizing: border-box;
   color: $primary-text-dark;
-  font: 105% $font-stack;
+  font: 20px $font-stack;
 }
 
 // ---------------LIST STYLES--------------------
@@ -38,14 +38,22 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+
+  li {
+    display: inline-block;
+    font-weight: bold;
+    min-width: 2em;
+    padding: 0.7em;
+    text-transform: uppercase;
+  }
 }
 
-li {
-  display: inline-block;
+ol {
   font-weight: bold;
-  min-width: 50px;
-  padding: 8px;
-  text-transform: uppercase;
+
+  li {
+    text-align: left;
+  }
 }
 
 // ----------HEADER & NAVIGATION-----------------
@@ -55,15 +63,20 @@ header {
   box-sizing: border-box;
   color: $primary-text-dark;
   margin: 0;
-  padding: 5px;
+  padding: 1.5em 0;
   text-align: center;
   top: 0;
   width: 100%;
+
+  span {
+    font-size: 2em;
+    font-weight: bold;
+  }
 }
 
 nav {
   background: $highlight2;
-  height: 40px;
+  height: 2.5em;
   margin: 0;
   padding:0;
   text-align: center;
@@ -72,16 +85,17 @@ nav {
 
 // ----------HEADINGS----------------------------
 h1 {
-  font-size: 24px;
+  font-size: 1.5em;
 }
 
 h2 {
-  color: $highlight;
-  font-size: 22px;
+  color: $highlight2;
+  font-size: 1.3em;
 }
 
 h3 {
   color: $highlight2;
+  font-size: 1em;
 }
 
 // ----------TEXT STYLES-------------------------
@@ -106,12 +120,10 @@ a:hover {
 // ----------MAIN CONTENT-------------------------
 
 .content {
-  @include border-radius(10px);
   background: $body-background;
   color: $primary-text-light;
-  margin: 5px auto;
-  max-width: 500px;
-  padding: 10px;
+  margin: 0.4em auto;
+  max-width: 28em;
   text-align: center;
   width: 80%;
 }
@@ -119,14 +131,14 @@ a:hover {
 .response {
   background: $body-background;
   border: 0;
-  border-bottom: 2px dashed $primary-text-light;
+  border-bottom: 0.10em dashed $primary-text-light;
   box-sizing: border-box;
   color: $white;
-  height: 55px;
-  margin-bottom: 20px;
-  min-width: 275px;
+  height: 2.5em;
+  margin-bottom: 1em;
+  min-width: 10em;
   outline: none;
-  padding: 10px 25px;
+  padding: 0.5em 1.1em;
   text-align: center;
 }
 
@@ -165,18 +177,18 @@ a:hover {
 // ----------BUTTON STYLES---------
 
 button {
-  @include border-radius(25px);
+  @include border-radius(1.25em);
   background: none;
-  border: 1px solid $highlight;
+  border: 0.08em solid $highlight;
   color: $primary-text-light;
   cursor: pointer;
   font-size: 0.9em;
-  margin: 5px;
-  min-height: 35px;
-  min-width: 125px;
+  margin: 0.25em;
+  min-height: 1.75em;
+  min-width: 6em;
   outline: none;
   overflow: hidden;
-  padding: 3px;
+  padding: 0.5em;
   position: relative;
   -moz-transition:    0.08s ease-in;
   -o-transition:      0.08s ease-in;
@@ -245,10 +257,7 @@ button:hover {
 
 .display {
   margin: 0 auto;
-  max-width: 300px;
-  min-height: 90px;
-  min-width: 100px;
-  padding: 15px 0 0;
+  padding: 0;
 }
 
 .large-number {
@@ -260,14 +269,15 @@ button:hover {
 
 table {
   background: $primary-background;
-  border: 10px double $highlight;
+  border: 0.5em double $highlight;
   color: $black;
+  font-size: .95em;
   margin: auto;
 }
 
 th,
 td {
-  padding: 5px;
+  padding: 0.5em;
 }
 
 th {
@@ -275,7 +285,7 @@ th {
 }
 
 tr {
-  border-bottom: 1px solid $highlight;
+  border-bottom: 0.1em solid $highlight;
 }
 
 // ----------INSTRUCTIONS------------------------
@@ -293,11 +303,11 @@ tr {
   color: $yellow;
   left: 0;
   margin: auto;
-  max-width: 600px;
-  padding: 10px 35px 50px;
+  max-width: 30em;
+  padding: 0.5em 1.75em 2.5em;
   position: relative;
   right: 0;
-  top: 125px;
+  top: 5em;
 }
 
 // ----------FOOTER------------------------------
@@ -305,12 +315,21 @@ tr {
 footer {
   background: $primary-background;
   margin: 0;
-  padding: 10px;
+  padding: 0.5em;
   text-align: center;
 
   a {
     color: $highlight2;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 0.15em;
   }
 }
+
+
+// ----------MEDIA QUERIES-----------------------
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.75em; }
+}
+
