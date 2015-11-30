@@ -78,7 +78,7 @@ $( document ).ready( function() {
     $translateButton.html( "check answer" );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" );
     $userResponse.focus();
-    $userResponse.attr( "placeholder", "enter translation here" );
+    $userResponse.attr( "placeholder", "enter translation" );
   } );
 
   /***********GETTING TRANSLATION**********/
@@ -149,7 +149,8 @@ $( document ).ready( function() {
     $wrongAnswer.text( String( numWrong ) );
     $displayBox.text( "" );
     $translateButton.html( "check answer" ).prop( "disabled", true );
-    $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
+    $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true);
+    $userResponse.prop( "placeholder", "") ;
     $getNumber.focus();
   } );
 
