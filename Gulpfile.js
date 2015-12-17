@@ -15,27 +15,22 @@ gulp.task( "styles", function() {
       suffix: ".min"
     } ) )
     .pipe( gulp.dest( "./app/css/" ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );
+    .pipe( browserSync.stream() );
 } );
 
 gulp.task( "scripts", function() {
   gulp.src( "src/js/**/*.js" )
     .pipe( concat( "scripts.js" ) )
-    .pipe( gulp.dest( "./app/js/" ) )
     .pipe( uglify() )
     .pipe( rename( {
       suffix: ".min"
     } ) )
     .pipe( gulp.dest( "./app/js/" ) )
-    .pipe( browserSync.reload( {
-      stream: true
-    } ) );;
+    .pipe( browserSync.stream() );
 } );
 
 gulp.task( "watch", [ "styles", "scripts" ], function() {
-  gulp.watch( "src/js/**/*.js", [ "scripts" ] );
+  gulp.watch( "src/js/*.js", [ "scripts" ] );
   gulp.watch( "src/sass/*.scss", [ "styles" ] );
 } );
 
@@ -46,7 +41,6 @@ gulp.task( "tests", function() {
 
 gulp.task( "browser-sync", [ "watch" ], function() {
   browserSync.init( {
-    files: [ "app/**" ],
     proxy: "localhost:3000",
     port: 4000,
     browser: [ "google chrome" ]
