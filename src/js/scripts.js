@@ -1,4 +1,4 @@
-$( document ).ready( function() {
+( function( $ ) {
   var $displayBox = $( "#display-box" );
   var $getNumber = $( "#get-number" );
   var $quiz = $( "#quiz" );
@@ -164,4 +164,4 @@ $( document ).ready( function() {
     $instructions.hide();
   } );
 
-} );
+} )( jQuery );
