@@ -28,10 +28,13 @@ gulp.task( "scripts", function() {
     .pipe( rename( {
       suffix: ".min"
     } ) )
-    .pipe( gulp.dest( "./app/js/" ) );
+    .pipe( gulp.dest( "./app/js/" ) )
+    .pipe( browserSync.reload( {
+      stream: true
+    } ) );;
 } );
 
-gulp.task( "watch", [ "browserSync", "tests", "styles", "scripts" ], function() {
+gulp.task( "watch", [ "styles", "scripts" ], function() {
   gulp.watch( "src/js/**/*.js", [ "scripts" ] );
   gulp.watch( "src/sass/*.scss", [ "styles" ] );
 } );
@@ -41,12 +44,13 @@ gulp.task( "tests", function() {
     .pipe( mocha( { reporter: "spec" } ) );
 } );
 
-gulp.task( "browserSync", function() {
-  browserSync( {
-    server: {
-      baseDir: "app"
-    }
+gulp.task( "browser-sync", [ "watch" ], function() {
+  browserSync.init( {
+    files: [ "app/**" ],
+    proxy: "localhost:3000",
+    port: 4000,
+    browser: [ "google chrome" ]
   } );
 } );
 
-gulp.task( "default", [ "styles", "scripts" ] );
+gulp.task( "default", [ "styles", "scripts", "tests" ] );
