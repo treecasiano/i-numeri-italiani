@@ -1,5 +1,6 @@
 ( function( $ ) {
   var $displayBox = $( "#display-box" );
+  var $displayText = $( "#display-text" );
   var $getNumber = $( "#get-number" );
   var $quiz = $( "#quiz" );
   var $quizButton = $( "#quiz-button" );
@@ -30,16 +31,10 @@
 
   /***********UTILITY FUNCTIONS**********/
 
-  function resizeInput() {
-    $( this ).attr( "size", $( this ).val().length );
-  }
-
-  $( 'input[type="text"]' )
-      .keyup( resizeInput )
-      .each( resizeInput );
-
   function generateNumber () {
-    return Math.floor( Math.random() * ( 9999 ) ) + 1;
+    var min = _.parseInt( $( "#minNum" ).val() ) || 1;
+    var max = _.parseInt( $( "#maxNum" ).val() ) || 9999;
+    return _.random( min, max );
   }
 
   /***********REVEALING QUIZ and LESSON**********/
@@ -70,21 +65,25 @@
   /***********GETTING NUMBERS**********/
 
   $getNumber.click( function() {
-    $displayBox.text( generateNumber() );
-    $displayBox.addClass( "large-number" );
+    $displayText.text( generateNumber() );
+    $displayText.addClass( "large-number" );
     numToTranslate = $displayBox.text();
     $translateButton.prop( "disabled", false );
     $userResponse.prop( "disabled", false );
     $translateButton.html( "check answer" );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" );
     $userResponse.focus();
+
+    // TODO: Create feedback that is more accessible than using the placeholder
+     /*Placeholder text disappears on focus, which makes it a bad way to provide
+    feedback to people using screen readers and keyboard-only navigation*/
     $userResponse.attr( "placeholder", "enter translation" );
   } );
 
   /***********GETTING TRANSLATION**********/
 
   function showCorrectAnswer( correctResponse ) {
-    $displayBox.html( "&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" +
+    $displayText.html( "&#9785 Incorrect!<br>THE CORRECT ANSWER IS <br>" +
       "<span class='answer-feedback'>" +
       correctResponse + "</span>" )
       .removeClass( "large-number" );
@@ -92,6 +91,8 @@
 
   function submitAnswer() {
     if ( !$userResponse.val() ) {
+
+      // TODO: Replace feedback mechanism with something more accessible
       $userResponse.attr( "placeholder", "ENTER A RESPONSE" );
       $userResponse.focus();
     } else {
@@ -107,7 +108,7 @@
     /***********SCORING**********/
       if ( $userResponse.val().toLowerCase() == response.translation ) {
         $userResponse.addClass( "correct-answer" );
-        $displayBox.text( "CORRECT!" );
+        $displayText.text( "CORRECT!" );
         numCorrect++;
         $correctAnswer.text( String( numCorrect ) );
       } else {
@@ -147,7 +148,7 @@
     $totalScore.text( String( score ) );
     $correctAnswer.text( String( numCorrect ) );
     $wrongAnswer.text( String( numWrong ) );
-    $displayBox.text( "" );
+    $displayText.text( "" );
     $translateButton.html( "check answer" ).prop( "disabled", true );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
     $userResponse.prop( "placeholder", "" ) ;
