@@ -41,6 +41,16 @@
             <button id="submit-translation">check answer</button>
             <button id="reset-scores">start over</button>
             <br>
+            <form>
+                <fieldset>
+                    <legend>CHOOSE A NEW RANGE OF NUMBERS</legend>
+                    <label for="minNum">enter lowest number:</label>
+                    <input type="text" id="minNum" placeholder="minimum = 1">
+                    <br>
+                    <label for="maxNum">enter highest number:</label>
+                    <input type="text" id="maxNum" placeholder="maximum = 9999">
+                </fieldset>
+            </form>
             <button id="show-instructions" class="small-buttons">show instructions</button>
         </div> <!-- end quiz -->
 
@@ -337,6 +347,7 @@
     </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
 </html>
