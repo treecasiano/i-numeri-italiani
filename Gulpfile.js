@@ -41,6 +41,7 @@ gulp.task( "tests", function() {
 
 gulp.task( "browser-sync", [ "watch" ], function() {
   browserSync.init( {
+    files: [ "app/**" ],
     proxy: "localhost:3000",
     port: 4000,
     browser: [ "google chrome" ]
