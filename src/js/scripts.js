@@ -149,8 +149,8 @@
     $wrongAnswer.text( String( numWrong ) );
     $displayBox.text( "" );
     $translateButton.html( "check answer" ).prop( "disabled", true );
-    $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true);
-    $userResponse.prop( "placeholder", "") ;
+    $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
+    $userResponse.prop( "placeholder", "" ) ;
     $getNumber.focus();
   } );
 
@@ -163,5 +163,4 @@
   $hideInstructions.click( function() {
     $instructions.hide();
   } );
-
 } )( jQuery );
