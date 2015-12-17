@@ -32,7 +32,9 @@
                 <li>score<br>&nbsp;<span id="total-score" class="total-score">&nbsp;
                     0</span>%</li>
             </ul>
-            <div id="display-box" class="display">&nbsp;</div>
+            <div id="display-box" class="display">
+                <p id="display-text">Click the button below to get a number!</p>
+            </div>
             <input id="user-response" class="response" type="text"
                    placeholder="enter translation here"
                    title="Italian translation of number">
@@ -44,11 +46,14 @@
             <form>
                 <fieldset>
                     <legend>CHOOSE A NEW RANGE OF NUMBERS</legend>
-                    <label for="minNum">enter lowest number:</label>
-                    <input type="text" id="minNum" placeholder="minimum = 1">
+                    <label for="minNum">lowest number:</label>
                     <br>
-                    <label for="maxNum">enter highest number:</label>
-                    <input type="text" id="maxNum" placeholder="maximum = 9999">
+                    <input type="text" id="minNum" class="numberInput"
+placeholder="minimum = 1">
+                    <br>
+                    <label for="maxNum">highest number:</label>
+                    <br>
+                    <input type="text" id="maxNum" class="numberInput" placeholder="maximum = 9999">
                 </fieldset>
             </form>
             <button id="show-instructions" class="small-buttons">show instructions</button>
