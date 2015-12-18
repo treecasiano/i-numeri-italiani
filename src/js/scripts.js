@@ -16,8 +16,12 @@
   var $showInstructions = $( "#show-instructions" );
   var $hideInstructions = $( "#hide-instructions" );
   var $instructions = $( "#instructions-overlay" );
+  var $showRangeButton = $ ( "#show-range-form" );
+  var $chooseRangeForm = $( "#choose-range-form" );
+  var $quizWrapper = $( "#quiz-wrapper" );
+  var $minNum = $( "#minNum" );
+  var $maxNum = $( "#maxNum" );
   var numToTranslate;
-
   var numCorrect = 0;
   var numWrong = 0;
   var numQuizzed = 0;
@@ -28,12 +32,13 @@
   $translateButton.prop( "disabled", true );
   $quiz.hide();
   $instructions.hide();
+  $chooseRangeForm.hide();
 
   /***********UTILITY FUNCTIONS**********/
 
   function generateNumber () {
-    var min = _.parseInt( $( "#minNum" ).val() ) || 1;
-    var max = _.parseInt( $( "#maxNum" ).val() ) || 9999;
+    var min = _.parseInt( $minNum.val() ) || 1;
+    var max = _.parseInt( $maxNum.val() ) || 9999;
     return _.random( min, max );
   }
 
@@ -153,6 +158,29 @@
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
     $userResponse.prop( "placeholder", "" ) ;
     $getNumber.focus();
+  } );
+
+    /***********TOGGLE RANGE SELECTION FORM**********/
+
+  $showRangeButton.click( function() {
+    $quizWrapper.slideToggle( "slow" );
+    $chooseRangeForm.slideToggle( "slow" );
+    if ( $showRangeButton.text() == "select a new range" ) {
+      $showRangeButton.text( "return to quiz" );
+      $minNum.focus();
+    } else {
+      $showRangeButton.text( "select a new range" );
+      $getNumber.focus();
+    }
+  } );
+
+  $maxNum.keypress( function( e ) {
+    if ( e.which == 13 ) {
+      if ( $maxNum ) {
+        $showRangeButton.focus();
+      }
+      this.blur();
+    }
   } );
 
     /***********HIDE INSTRUCTIONS**********/
