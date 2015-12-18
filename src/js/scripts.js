@@ -16,7 +16,7 @@
   var $showInstructions = $( "#show-instructions" );
   var $hideInstructions = $( "#hide-instructions" );
   var $instructions = $( "#instructions-overlay" );
-  var $showRangeButton = $ ( "#show-range-form" );
+  var $showRangeButton = $( "#show-range-form" );
   var $chooseRangeForm = $( "#choose-range-form" );
   var $quizWrapper = $( "#quiz-wrapper" );
   var $minNum = $( "#minNum" );
@@ -174,10 +174,19 @@
     }
   } );
 
+  $minNum.keypress( function( e ) {
+    if ( e.which == 13 ) {
+      if ( $minNum ) {
+        $maxNum.focus();
+      }
+      this.blur();
+    }
+  } );
+
   $maxNum.keypress( function( e ) {
     if ( e.which == 13 ) {
       if ( $maxNum ) {
-        $showRangeButton.focus();
+        $showRangeButton.click();
       }
       this.blur();
     }
