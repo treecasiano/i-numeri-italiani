@@ -1,7 +1,7 @@
 ( function( $ ) {
   var $displayBox = $( "#display-box" );
   var $displayText = $( "#display-text" );
-  var $getNumber = $( "#get-number" );
+  var $getNumberButton = $( "#get-number" );
   var $quiz = $( "#quiz" );
   var $quizButton = $( "#quiz-button" );
   var $lesson = $( "#lesson" );
@@ -29,38 +29,31 @@
 
   var wrongAnswers = [];
 
+  // Hide/disable elements on page load
   $translateButton.prop( "disabled", true );
   $quiz.hide();
   $instructions.hide();
   $chooseRangeForm.hide();
 
-  /***********UTILITY FUNCTIONS**********/
-
-  function generateNumber () {
-    var min = _.parseInt( $minNum.val() ) || 1;
-    var max = _.parseInt( $maxNum.val() ) || 9999;
-    return _.random( min, max );
-  }
-
   /***********REVEALING QUIZ and LESSON**********/
 
   function showQuiz() {
-
     $quiz.slideDown( 1000 ).delay( 300 );
     $lesson.slideUp( 500 ).fadeOut( 500 );
     $( "footer" ).hide();
     $( "header" ).slideUp( 1000 ).delay( 400 );
+    $getNumberButton.focus();
   }
 
   function showLesson() {
     $lesson.slideDown( 1000 ).delay( 400 );
     $quiz.slideUp( 500 ).fadeOut( 500 );
     $instructions.fadeOut( 1000 ).delay( 1000 );
-    $showInstructions.text( "show instructions" );
     $( "footer" ).show();
     $( "header" ).slideDown( 1000 ).delay( 400 );
   }
 
+  // Click handlers
   $quizButton.click( showQuiz );
 
   $( "#quiz-jump" ).click( showQuiz );
@@ -69,7 +62,13 @@
 
   /***********GETTING NUMBERS**********/
 
-  $getNumber.click( function() {
+  function generateNumber () {
+    var min = _.parseInt( $minNum.val() ) || 1;
+    var max = _.parseInt( $maxNum.val() ) || 9999;
+    return _.random( min, max );
+  }
+
+  $getNumberButton.click( function() {
     $displayText.text( generateNumber() );
     $displayText.addClass( "large-number" );
     numToTranslate = $displayBox.text();
@@ -136,7 +135,7 @@
   $userResponse.keypress( function( e ) {
     if ( e.which == 13 ) {
       if ( $userResponse ) {
-        $getNumber.focus();
+        $getNumberButton.focus();
       }
       submitAnswer();
       this.blur();
@@ -157,20 +156,20 @@
     $translateButton.html( "check answer" ).prop( "disabled", true );
     $userResponse.val( "" ).removeClass( "wrong-answer correct-answer" ).prop( "disabled", true );
     $userResponse.prop( "placeholder", "" ) ;
-    $getNumber.focus();
+    $getNumberButton.focus();
   } );
 
-    /***********TOGGLE RANGE SELECTION FORM**********/
+  /***********RANGE SELECTION FORM**********/
 
   $showRangeButton.click( function() {
     $quizWrapper.slideToggle( "slow" );
     $chooseRangeForm.slideToggle( "slow" );
-    if ( $showRangeButton.text() == "select a new range" ) {
-      $showRangeButton.text( "return to quiz" );
+    if ( $showRangeButton.text() == "Select a different range of numbers!" ) {
+      $showRangeButton.text( "RETURN TO QUIZ" );
       $minNum.focus();
     } else {
-      $showRangeButton.text( "select a new range" );
-      $getNumber.focus();
+      $showRangeButton.text( "Select a different range of numbers!" );
+      $getNumberButton.focus();
     }
   } );
 
@@ -192,7 +191,7 @@
     }
   } );
 
-    /***********HIDE INSTRUCTIONS**********/
+  /***********HIDE INSTRUCTIONS**********/
 
   $showInstructions.click( function() {
     $instructions.show();
