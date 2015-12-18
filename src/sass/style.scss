@@ -136,13 +136,35 @@ a:hover {
   color: $white;
   height: 2.5em;
   margin-bottom: 1em;
-  min-width: 10em;
+  min-width: 15em;
   outline: none;
   padding: 0.5em 1.1em;
   text-align: center;
 }
 
+fieldset {
+  border: 0.15em dashed $yellow;
+  color: $highlight;
+  margin-top: 2em;
+}
 
+legend {
+  color: $yellow;
+}
+
+.numberInput {
+  background: transparent;
+  border: 1px solid $highlight;
+  color: $highlight2;
+  margin: 1em;
+  min-width: 3em;
+  padding: 1em;
+  text-align: center;
+}
+
+.invalid-entry {
+  background-color: $highlight2;
+}
 // ----------SCORE STYLES-------------------------
 
 .correct-answer,
@@ -194,11 +216,10 @@ button {
   -o-transition:      0.08s ease-in;
   -webkit-transition: 0.08s ease-in;
   transition: 0.08s ease-in;
-
 }
 
 button:focus {
-  border: solid $highlight2;
+  border: 0.08em solid $highlight2;
 }
 
 button:hover {
@@ -207,8 +228,8 @@ button:hover {
 }
 
 .small-buttons {
-  @include border-radius(0);
   border: 0;
+  color: $yellow;
   width: auto;
 }
 
@@ -256,13 +277,14 @@ button:hover {
 // ----------FEEDBACK DISPLAY--------------------
 
 .display {
-  margin: 0 auto;
+  border: 0.15em dashed $highlight2;
+  min-height: 7.5em;
   padding: 0;
 }
 
 .large-number {
   color: $highlight2;
-  font-size: 4em;
+  font-size: 2.2em;
 }
 
 // ----------TABLE STYLES------------------------
