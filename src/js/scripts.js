@@ -21,6 +21,7 @@
   var $quizWrapper = $( "#quiz-wrapper" );
   var $minNum = $( "#minNum" );
   var $maxNum = $( "#maxNum" );
+  var $invalidEntry = $( "#invalid-entry" );
   var numToTranslate;
   var numCorrect = 0;
   var numWrong = 0;
@@ -34,6 +35,7 @@
   $quiz.hide();
   $instructions.hide();
   $chooseRangeForm.hide();
+  $invalidEntry.hide();
 
   /***********REVEALING QUIZ and LESSON**********/
 
@@ -63,8 +65,8 @@
   /***********GETTING NUMBERS**********/
 
   function generateNumber () {
-    var min = _.parseInt( $minNum.val() ) || 1;
-    var max = _.parseInt( $maxNum.val() ) || 9999;
+    var min = Math.abs( _.parseInt( $minNum.val() ) ) || 1;
+    var max = Math.abs( _.parseInt( $maxNum.val() ) ) || 9999;
     return _.random( min, max );
   }
 
@@ -95,10 +97,10 @@
 
   function submitAnswer() {
     if ( !$userResponse.val() ) {
+      $userResponse.focus();
 
       // TODO: Replace feedback mechanism with something more accessible
       $userResponse.attr( "placeholder", "ENTER A RESPONSE" );
-      $userResponse.focus();
     } else {
       $userResponse.prop( "disabled", true );
       var request = {
@@ -162,14 +164,19 @@
   /***********RANGE SELECTION FORM**********/
 
   $showRangeButton.click( function() {
-    $quizWrapper.slideToggle( "slow" );
-    $chooseRangeForm.slideToggle( "slow" );
-    if ( $showRangeButton.text() == "Select a different range of numbers!" ) {
-      $showRangeButton.text( "RETURN TO QUIZ" );
-      $minNum.focus();
+    if ( ( $minNum.val() != "0" ) && ( $maxNum.val() != "0" ) ) {
+        $quizWrapper.slideToggle( "slow" );
+        $chooseRangeForm.slideToggle( "slow" );
+        $invalidEntry.hide();
+      if ( $showRangeButton.text() == "Select a different range of numbers!" ) {
+        $showRangeButton.text( "RETURN TO QUIZ" );
+        $minNum.focus();
+      } else {
+        $showRangeButton.text( "Select a different range of numbers!" );
+        $getNumberButton.focus();
+      }
     } else {
-      $showRangeButton.text( "Select a different range of numbers!" );
-      $getNumberButton.focus();
+      $invalidEntry.show();
     }
   } );
 

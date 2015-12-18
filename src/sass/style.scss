@@ -156,8 +156,14 @@ legend {
   background: transparent;
   border: 1px solid $highlight;
   color: $highlight2;
+  margin: 1em;
+  min-width: 3em;
   padding: 1em;
   text-align: center;
+}
+
+.invalid-entry {
+  background-color: $highlight2;
 }
 // ----------SCORE STYLES-------------------------
 

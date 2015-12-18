@@ -44,23 +44,25 @@
                 <button id="submit-translation">check answer</button>
                 <button id="reset-scores">start over</button>
             </div>
-
-            <br>
-            <button id="show-range-form" class="small-buttons">Select a different range of numbers!</button>
             <form id="choose-range-form">
                 <fieldset>
-                    <legend>NUMBER RANGE FOR QUIZ</legend>
+                    <legend>SELECT A NEW RANGE</legend>
+                    <div id="invalid-entry" class="invalid-entry"><p>0 is not a valid entry. Please try again.</p></div>
                     <label for="minNum">lowest number:</label>
                     <br>
                     <input type="text" id="minNum" class="numberInput" maxlength="4"
-placeholder="minimum = 1">
+                           min="1" max="9998"
+placeholder="1">
                     <br>
                     <label for="maxNum">highest number:</label>
                     <br>
                     <input type="text" id="maxNum" class="numberInput" maxlength="4"
-placeholder="maximum = 9999">
+                           min="2" max="9999"
+placeholder="9999">
                 </fieldset>
             </form>
+            <br>
+            <button id="show-range-form" class="small-buttons">Select a different range of numbers!</button>
             <button id="show-instructions" class="small-buttons">Tell me how to type accents.</button>
         </div> <!-- end quiz -->
 
