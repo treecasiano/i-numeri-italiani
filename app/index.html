@@ -24,28 +24,33 @@
 
     <div class="content">
         <div id="quiz">
-            <ul>
-                <li>right<br><span id="correct-answer" class="correct-answer-score">0
-                </span></li>
-                <li>wrong
-                    <br><span id="wrong-answer" class="wrong-answer-score">0</span></li>
-                <li>score<br>&nbsp;<span id="total-score" class="total-score">&nbsp;
-                    0</span>%</li>
-            </ul>
-            <div id="display-box" class="display">
-                <p id="display-text">Click the button below to get a number!</p>
+            <div id="quiz-wrapper">
+                <ul>
+                    <li>right<br><span id="correct-answer" class="correct-answer-score">0
+                    </span></li>
+                    <li>wrong
+                        <br><span id="wrong-answer" class="wrong-answer-score">0</span></li>
+                    <li>score<br>&nbsp;<span id="total-score" class="total-score">&nbsp;
+                        0</span>%</li>
+                </ul>
+                <div id="display-box" class="display">
+                    <p id="display-text">Click the button below to get a number!</p>
+                </div>
+                <input id="user-response" class="response" type="text"
+                       placeholder="enter translation here"
+                       title="Italian translation of number">
+                <br>
+                <button id="get-number" autofocus>get number</button>
+                <button id="submit-translation">check answer</button>
+                <button id="reset-scores">start over</button>
             </div>
-            <input id="user-response" class="response" type="text"
-                   placeholder="enter translation here"
-                   title="Italian translation of number">
+
             <br>
-            <button id="get-number" autofocus>get number</button>
-            <button id="submit-translation">check answer</button>
-            <button id="reset-scores">start over</button>
-            <br>
-            <form>
+            <button id="show-range-form" class="small-buttons">select a new range</button>
+            <button id="show-instructions" class="small-buttons">show instructions</button>
+            <form id="choose-range-form">
                 <fieldset>
-                    <legend>CHOOSE A NEW RANGE OF NUMBERS</legend>
+                    <legend>NUMBER RANGE FOR QUIZ</legend>
                     <label for="minNum">lowest number:</label>
                     <br>
                     <input type="text" id="minNum" class="numberInput"
@@ -56,7 +61,6 @@ placeholder="minimum = 1">
                     <input type="text" id="maxNum" class="numberInput" placeholder="maximum = 9999">
                 </fieldset>
             </form>
-            <button id="show-instructions" class="small-buttons">show instructions</button>
         </div> <!-- end quiz -->
 
         <div id="lesson">
@@ -336,7 +340,7 @@ placeholder="minimum = 1">
     <div id="instructions-overlay" class="instructions-overlay">
         <div id="instructions-div" class="instructions-text">
             <h2>INSTRUCTIONS</h2>
-            <p>Click the button above to generate a new number, then enter your translation in the field below these instructions. After your translation is checked, you may continue to play by clicking the same button.</p>
+            <p>Click the "get number" button to generate a new number, then enter your translation in the field below these instructions. After your translation is checked, you may continue to play by clicking the same button.</p>
 
             <h3>Creating Accented Characters</h3>
             <p><em><strong>Mac:</strong></em><br>The easiest way to make the accent in <em>tré</em> is to enable the Extended US Keyboard. Hold down the <em>e</em> key and select 2 from the menu that pops up.</p>
