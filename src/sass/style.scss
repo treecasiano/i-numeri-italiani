@@ -222,7 +222,6 @@ button:hover {
 }
 
 .small-buttons {
-  @include border-radius(0);
   border: 0;
   width: auto;
 }
