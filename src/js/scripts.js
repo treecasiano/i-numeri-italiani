@@ -30,10 +30,8 @@
 
   var wrongAnswers = [];
 
-  // Hide/disable elements on page load
+  // Hide/disable elements
   $translateButton.prop( "disabled", true );
-  $quiz.hide();
-  $instructions.hide();
   $chooseRangeForm.hide();
   $invalidEntry.hide();
 
@@ -104,15 +102,16 @@
     } else {
       $userResponse.prop( "disabled", true );
       var request = {
-      text: numToTranslate
+        text: numToTranslate
       };
 
       $.post( "translate", request, function( response ) {
-        console.log( response.translation );
+        console.log( parseInt( numToTranslate ) + " = " + response.translation );
         numQuizzed++;
 
     /***********SCORING**********/
-      if ( $userResponse.val().toLowerCase() == response.translation ) {
+      if ( $userResponse.val().toLowerCase() === response.translation ) {
+        console.log( $userResponse.val().toLowerCase() + " = " + response.translation );
         $userResponse.addClass( "correct-answer" );
         $displayText.text( "CORRECT!" );
         numCorrect++;
@@ -128,6 +127,7 @@
       var score = Math.round( ( numCorrect / numQuizzed ) * 100 );
       $totalScore.text( String( score ) );
       $translateButton.prop( "disabled", true );
+      $getNumberButton.focus();
       } );
     }
   }
@@ -136,11 +136,12 @@
 
   $userResponse.keypress( function( e ) {
     if ( e.which == 13 ) {
-      if ( $userResponse ) {
-        $getNumberButton.focus();
+      if ( $userResponse.val() ) {
+        console.log( "The value in the input field is " + $userResponse.val() );
+        console.log( "The number to be translated is " + parseInt( numToTranslate ) );
+        submitAnswer();
+        this.blur();
       }
-      submitAnswer();
-      this.blur();
     }
   } );
 
