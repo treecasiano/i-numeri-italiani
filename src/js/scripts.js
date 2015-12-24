@@ -127,6 +127,7 @@
       var score = Math.round( ( numCorrect / numQuizzed ) * 100 );
       $totalScore.text( String( score ) );
       $translateButton.prop( "disabled", true );
+      $getNumberButton.focus();
       } );
     }
   }
@@ -136,7 +137,8 @@
   $userResponse.keypress( function( e ) {
     if ( e.which == 13 ) {
       if ( $userResponse.val() ) {
-        $getNumberButton.focus();
+        console.log( "The value in the input field is " + $userResponse.val() );
+        console.log( "The number to be translated is " + parseInt( numToTranslate ) );
         submitAnswer();
         this.blur();
       }
