@@ -349,17 +349,17 @@ th {
 
 // ----------FOOTER------------------------------
 
-footer {
+.main-footer {
   background: $primary-background;
   margin: 0;
   padding: 0.5em;
   text-align: center;
+}
 
-  a {
-    color: $highlight2;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-  }
+.main-footer-link {
+  color: $highlight2;
+  font-weight: bold;
+  letter-spacing: 0.15em;
 }
 
 
