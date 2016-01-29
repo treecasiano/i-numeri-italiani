@@ -43,7 +43,9 @@ body {
 
 // ---------------LIST STYLES--------------------
 
-ul {
+.nav-ul,
+.quiz-ul
+{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -67,7 +69,7 @@ ol {
 
 // ----------HEADER & NAVIGATION-----------------
 
-header {
+.main-header {
   background: $primary-background;
   box-sizing: border-box;
   color: $primary-text-dark;
@@ -76,14 +78,14 @@ header {
   text-align: center;
   top: 0;
   width: 100%;
-
-  span {
-    font-size: 2em;
-    font-weight: bold;
-  }
 }
 
-nav {
+.main-header-span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.main-nav {
   background: $highlight2;
   height: 2.5em;
   margin: 0;
@@ -302,28 +304,34 @@ button:hover {
 }
 
 // ----------TABLE STYLES------------------------
-
-table {
+// Because this is a small site, I am not worried about using the element selectors
+// for styling the th and td elements
+// If this were a large site with different kinds of tables requiring different styles,
+// I would create classes for the different kinds of table elements.
+.vocab-table {
   background: $primary-background;
   border: 0.5em double $highlight;
   color: $black;
   font-size: 0.90em;
   margin: auto;
+
+  th,
+  td {
+    border: 0.1em solid $highlight;
+  }
+
+  td {
+    padding: 0.2em;
+  }
+
+  th {
+    font-weight: bold;
+    padding: 0.25em;
+  }
+
 }
 
-th,
-td {
-  border: 0.1em solid $highlight;
-}
 
-td {
-  padding: 0.2em;
-}
-
-th {
-  font-weight: bold;
-  padding: 0.25em;
-}
 
 // ----------INSTRUCTIONS------------------------
 
@@ -349,17 +357,17 @@ th {
 
 // ----------FOOTER------------------------------
 
-footer {
+.main-footer {
   background: $primary-background;
   margin: 0;
   padding: 0.5em;
   text-align: center;
+}
 
-  a {
-    color: $highlight2;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-  }
+.main-footer-link {
+  color: $highlight2;
+  font-weight: bold;
+  letter-spacing: 0.15em;
 }
 
 
