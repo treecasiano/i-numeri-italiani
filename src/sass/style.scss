@@ -302,28 +302,34 @@ button:hover {
 }
 
 // ----------TABLE STYLES------------------------
-
-table {
+// Because this is a small site, I am not worried about using the element selectors
+// for styling the th and td elements
+// If this were a large site with different kinds of tables requiring different styles,
+// I would create classes for the different kinds of table elements.
+.vocab-table {
   background: $primary-background;
   border: 0.5em double $highlight;
   color: $black;
   font-size: 0.90em;
   margin: auto;
+
+  th,
+  td {
+    border: 0.1em solid $highlight;
+  }
+
+  td {
+    padding: 0.2em;
+  }
+
+  th {
+    font-weight: bold;
+    padding: 0.25em;
+  }
+
 }
 
-th,
-td {
-  border: 0.1em solid $highlight;
-}
 
-td {
-  padding: 0.2em;
-}
-
-th {
-  font-weight: bold;
-  padding: 0.25em;
-}
 
 // ----------INSTRUCTIONS------------------------
 
