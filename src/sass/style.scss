@@ -67,7 +67,7 @@ ol {
 
 // ----------HEADER & NAVIGATION-----------------
 
-header {
+.main-header {
   background: $primary-background;
   box-sizing: border-box;
   color: $primary-text-dark;
@@ -76,14 +76,14 @@ header {
   text-align: center;
   top: 0;
   width: 100%;
-
-  span {
-    font-size: 2em;
-    font-weight: bold;
-  }
 }
 
-nav {
+.main-header-span {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.main-nav {
   background: $highlight2;
   height: 2.5em;
   margin: 0;
