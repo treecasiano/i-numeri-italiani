@@ -43,7 +43,9 @@ body {
 
 // ---------------LIST STYLES--------------------
 
-ul {
+.nav-ul,
+.quiz-ul
+{
   list-style-type: none;
   margin: 0;
   padding: 0;
