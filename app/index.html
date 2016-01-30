@@ -21,8 +21,8 @@
 
     <nav class="main-nav">
         <ul class="nav-ul">
-            <li><a id="show-lesson" href="#">Lesson</a></li>
-            <li><a id="quiz-jump" href="#">Quiz</a></li>
+            <li class="nav-li"><a id="show-lesson" href="#">Lesson</a></li>
+            <li class="nav-li"><a id="quiz-jump" href="#">Quiz</a></li>
         </ul>
     </nav>
 
@@ -30,11 +30,13 @@
         <div id="quiz" class="hide-by-default">
             <div id="quiz-wrapper">
                 <ul class="quiz-ul">
-                    <li>right<br><span id="correct-answer" class="correct-answer-score">0
+                    <li class="quiz-li">right<br><span id="correct-answer"
+                                         class="correct-answer-score">0
                     </span></li>
-                    <li>wrong
+                    <li class="quiz-li">wrong
                         <br><span id="wrong-answer" class="wrong-answer-score">0</span></li>
-                    <li>score<br>&nbsp;<span id="total-score" class="total-score">&nbsp;
+                    <li class="quiz-li">score<br>&nbsp;<span id="total-score"
+                                                class="total-score">&nbsp;
                         0</span>%</li>
                 </ul>
                 <div id="display-box" class="display">
@@ -44,9 +46,11 @@
                        placeholder="enter translation here"
                        title="Italian translation of number">
                 <br>
-                <button id="get-number" autofocus>get number</button>
-                <button id="submit-translation">check answer</button>
-                <button id="reset-scores">start over</button>
+                <button id="get-number" class="button" autofocus>get
+                    number</button>
+                <button id="submit-translation" class="button">check
+                    answer</button>
+                <button id="reset-scores" class="button">start over</button>
             </div>
             <form id="choose-range-form">
                 <fieldset>
@@ -66,18 +70,18 @@ placeholder="9999">
                 </fieldset>
             </form>
             <br>
-            <button id="show-range-form" class="small-buttons">Select a different range of numbers!</button>
-            <button id="show-instructions" class="small-buttons">Tell me how to type accents.</button>
+            <button id="show-range-form" class="button instruction-button">Select a different range of numbers!</button>
+            <button id="show-instructions" class="button instruction-button">Tell me how to type accents.</button>
         </div> <!-- end quiz -->
 
         <div id="lesson">
             <h1>How to Count in Italian</h1>
             <p>Counting in Italian is fun and relatively easy. You can say most of the
                 numbers you encounter in daily life by learning the following:
-                <ol type="1">
-                    <li>the numbers 1 to 19</li>
-                    <li>how to count by tens up to 100</li>
-                    <li>the words for thousand and million</li>
+                <ol class="lesson-ol" type="1">
+                    <li class="lesson-li">the numbers 1 to 19</li>
+                    <li class="lesson-li">how to count by tens up to 100</li>
+                    <li class="lesson-li">the words for thousand and million</li>
                 </ol>
             <p>Let's learn how to count to 10 first.</p>
 
@@ -220,12 +224,12 @@ placeholder="9999">
 
             </table>
 
-            <h2>Counting from 20 to 99</h2>
+            <h2 class="lesson-h2">Counting from 20 to 99</h2>
 
                 <p>For the numbers 20 through 99, take the number in the tens place (<em>venti</em>,<em>trenta</em>, <em>quaranta</em>, etc) and append a number 1 through 9 (<em>uno</em> through <em>nove</em>). 99 is <em>novantanove</em>.
                     34 is <em>trentaquattro</em>.</p>
 
-            <h3>Exceptions to the Pattern</h3>
+            <h3 class="lesson-h3">Exceptions to the Pattern</h3>
                 <p>If the number ends in 1 or 8, drop the final vowel from the tens
                     number. Thus, <em>trenta</em> + <em>otto</em> results in trentotto
                     (38)
@@ -269,7 +273,7 @@ placeholder="9999">
                 </tr>
             </table>
 
-            <h2>Counting 100 - 999</h2>
+            <h2 class="lesson-h2">Counting 100 - 999</h2>
 
             <p>For 200, 300, 400, you add 2, 3, 4, and so forth to <em>cento</em>. (You do not add <em>uno</em> before <em>cento</em> if the number is 100.) Thus, 200 is <em>duecento</em>, 300 is <em>
                 trecento</em>, and 400 is <em>quattrocento</em>. You add the number 1 through 99 to the hundreds value to get the other combinations of numbers:</p>
@@ -291,7 +295,7 @@ placeholder="9999">
 
             <p><strong>IMPORTANT!</strong> When <em>cento</em> is followed by <em>otto</em> or <em>ottanta</em>, you drop the <em>o</em> from <em>cento</em>.</p>
 
-            <h2>Counting 1000 - 9999</h2>
+            <h2 class="lesson-h2">Counting 1000 - 9999</h2>
             <p><em>Mille</em> is 1000 and changes to <em>mila</em> in 2000 (<em>duemila</em>), 3000 (<em>tremila</em>), 4000 (<em>quattromila</em>), and so forth.</p>
             <p>Numbers are chained together like this:</p>
 
@@ -314,7 +318,7 @@ placeholder="9999">
                 </tr>
             </table>
 
-            <h2>More Numbers in Italian</h2>
+            <h2 class="lesson-h2">More Numbers in Italian</h2>
             <table class="vocab-table">
                 <tr>
                     <th scope="col">number</th>
@@ -340,18 +344,18 @@ placeholder="9999">
             <br>
             <p>Now that you know the rules, are you ready to count in Italian?</p>
             <p>Try this quiz designed to test your translation prowess with numbers 1 through 9999.</p>
-            <button id="quiz-button" class="slide">&nbsp;</button>
+            <button id="quiz-button" class="button slide">&nbsp;</button>
         </div>  <!-- end lesson -->
     </div>  <!-- end main content -->
 
     <div id="instructions-overlay" class="instructions-overlay hide-by-default">
         <div id="instructions-div" class="instructions-text">
 
-            <h2>Creating Accented Characters</h2>
+            <h2 class="lesson-h2">Creating Accented Characters</h2>
             <p><em><strong>Mac:</strong></em><br>The easiest way to make the accent in <em>tré</em> is to enable the Extended US Keyboard. Hold down the <em>e</em> key and select 2 from the menu that pops up.</p>
             <p><em><strong>Windows:</strong></em><br>Use the Windows ALT Code (ALT+0233).</p>
 
-            <button id="hide-instructions">return to quiz</button>
+            <button id="hide-instructions" class="button">return to quiz</button>
         </div>
     </div>  <!-- end instructions -->
 

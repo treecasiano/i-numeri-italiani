@@ -44,29 +44,28 @@ body {
 // ---------------LIST STYLES--------------------
 
 .nav-ul,
-.quiz-ul
-{
+.quiz-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-  li {
-    display: inline-block;
-    font-weight: bold;
-    min-width: 2em;
-    padding: 0.7em;
-    text-transform: uppercase;
-  }
 }
 
-ol {
+.lesson-ol {
   font-weight: bold;
-
-  li {
-    text-align: left;
-  }
 }
 
+.nav-li,
+.quiz-li {
+  display: inline-block;
+  font-weight: bold;
+  min-width: 2em;
+  padding: 0.7em;
+  text-transform: uppercase;
+}
+
+.lesson-li {
+  text-align: left;
+}
 // ----------HEADER & NAVIGATION-----------------
 
 .main-header {
@@ -99,12 +98,12 @@ h1 {
   font-size: 1.5em;
 }
 
-h2 {
+.lesson-h2 {
   color: $highlight2;
   font-size: 1.3em;
 }
 
-h3 {
+.lesson-h3 {
   color: $highlight2;
   font-size: 1em;
 }
@@ -214,7 +213,7 @@ legend {
 
 // ----------BUTTON STYLES---------
 
-button {
+.button {
   @include border-radius(1.25em);
   background: none;
   border: 0.08em solid $highlight;
@@ -234,19 +233,19 @@ button {
   transition: 0.08s ease-in;
 }
 
-button:focus {
-  border: 0.08em solid $highlight2;
-}
-
-button:hover {
-  background: $highlight;
-  color: $primary-text-dark;
-}
-
-.small-buttons {
+.instruction-button {
   border: 0;
   color: $yellow;
   width: auto;
+}
+
+.button:focus {
+  border: 0.08em solid $highlight2;
+}
+
+.button:hover {
+  background: $highlight;
+  color: $primary-text-dark;
 }
 
 // button animation
