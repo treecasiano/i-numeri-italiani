@@ -49,24 +49,24 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-  li {
-    display: inline-block;
-    font-weight: bold;
-    min-width: 2em;
-    padding: 0.7em;
-    text-transform: uppercase;
-  }
 }
 
-ol {
+.lesson-ol {
   font-weight: bold;
-
-  li {
-    text-align: left;
-  }
 }
 
+.nav-li,
+.quiz-li {
+  display: inline-block;
+  font-weight: bold;
+  min-width: 2em;
+  padding: 0.7em;
+  text-transform: uppercase;
+}
+
+.lesson-li {
+  text-align: left;
+}
 // ----------HEADER & NAVIGATION-----------------
 
 .main-header {
