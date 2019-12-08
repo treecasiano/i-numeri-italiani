@@ -1,4 +1,4 @@
-# inumeri
+# i-numeri-italiani
 This is a Node Express app that translates Italian numbers 1 - 9999 programmatically. CSS and JS files are concatenated and minified using the Gulp task runner. Gulp also runs the Mocha and Chai tests that make sure the translation function works correctly.
 
 There are only two branches on GitHub, master and develop. Locally I use a third branch for deployment to Heroku. With Heroku, you deploy by way of pushing your code much like you would push it to GitHub, but instead it goes to a Heroku master. On that branch, I commit the generated CSS and JS files that I am keeping out of the GitHub repository.
