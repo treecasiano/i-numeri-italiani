@@ -6,10 +6,10 @@ npm-debug.log
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-/node_modules
+node_modules
 
 # Ignore Sass' cache
-/.sass-cache
+.sass-cache
 
 # Ignore CSS & Map File
  committing generated .css file in master for deployment to Heroku
