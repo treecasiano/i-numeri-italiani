@@ -7,7 +7,7 @@ Vue.use(Vuetify);
 
 export default new Vuetify({
   icons: {
-    iconfont: "fa"
+    iconfont: "mdi",
   },
   theme: {
     dark: true,
@@ -20,7 +20,7 @@ export default new Vuetify({
         error: colors.red.darken4,
         warning: colors.deepOrange,
         info: colors.lightBlue,
-        success: colors.lightBlue
+        success: colors.lightBlue,
       },
       dark: {
         primary: colors.grey.darken4,
@@ -30,11 +30,11 @@ export default new Vuetify({
         error: colors.red.darken4,
         warning: colors.deepOrange,
         info: colors.lightBlue,
-        success: colors.lightBlue
-      }
+        success: colors.lightBlue,
+      },
     },
     options: {
-      customProperties: true
-    }
-  }
+      customProperties: true,
+    },
+  },
 });
