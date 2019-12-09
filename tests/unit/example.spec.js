@@ -1,11 +1,11 @@
 import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import NumberToTextTranslator from "@/components/NumberToTextTranslator.vue";
 
-describe("HelloWorld.vue", () => {
+skip.describe("NumberToTextTranslator.vue", () => {
   it("renders props.msg when passed", () => {
     const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+    const wrapper = shallowMount(NumberToTextTranslator, {
+      propsData: { msg },
     });
     expect(wrapper.text()).toMatch(msg);
   });

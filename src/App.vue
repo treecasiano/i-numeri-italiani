@@ -7,19 +7,19 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld />
+      <NumberToTextTranslator />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import NumberToTextTranslator from "./components/NumberToTextTranslator";
 
 export default {
   name: "App",
 
   components: {
-    HelloWorld,
+    NumberToTextTranslator,
   },
 
   data: () => ({
