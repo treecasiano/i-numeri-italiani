@@ -1,19 +1,28 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <v-toolbar-title class="accent--text title">I Numeri Italiani</v-toolbar-title>
+      <v-toolbar-title class="accent--text display-2"
+        >I Numeri Italiani</v-toolbar-title
+      >
       <template v-slot:extension>
-        <v-tabs v-model="tabs" centered slider-color="accent" background-color="transparent">
-          <v-tab>Learn to Count in Italian</v-tab>
-          <v-tab>Translate Numbers</v-tab>
-          <v-tab>Practice Quiz</v-tab>
+        <v-tabs
+          v-model="tabs"
+          centered
+          slider-color="accent"
+          background-color="transparent"
+        >
+          <v-tab>Learn</v-tab>
+          <v-tab>Translate</v-tab>
+          <v-tab>Practice</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
 
     <v-content>
       <v-tabs-items v-model="tabs" color="transparent">
-        <v-tab-item></v-tab-item>
+        <v-tab-item>
+          <Lesson />
+        </v-tab-item>
         <v-tab-item>
           <NumberToTextTranslator />
         </v-tab-item>
@@ -24,12 +33,14 @@
 </template>
 
 <script>
+import Lesson from "./components/Lesson";
 import NumberToTextTranslator from "./components/NumberToTextTranslator";
 
 export default {
   name: "App",
 
   components: {
+    Lesson,
     NumberToTextTranslator,
   },
 

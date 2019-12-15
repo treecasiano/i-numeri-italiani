@@ -10,15 +10,17 @@
           color="secondary"
           label="Number from 1 to 9999"
           max="9999"
+          maxLength="4"
           min="1"
           outlined
+          placeholder="9999"
           rounded
           step="1"
           type="number"
         ></v-text-field>
       </v-flex>
       <v-flex xs12 md6 ma-5 align-self-baseline>
-        <div class="accent--text display-4">{{ translatedNumber }}</div>
+        <div class="accent--text title">{{ translatedNumber }}</div>
       </v-flex>
     </v-layout>
   </v-container>
