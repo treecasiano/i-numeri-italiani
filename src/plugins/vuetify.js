@@ -10,13 +10,12 @@ export default new Vuetify({
     iconfont: "mdi",
   },
   theme: {
-    dark: true,
     themes: {
       light: {
-        primary: colors.green.darken4,
-        secondary: colors.green.lighten1,
-        accent: colors.green.lighten4,
-        anchor: colors.green.darken4,
+        primary: colors.grey.darken4,
+        secondary: colors.pink.lighten1,
+        accent: colors.pink.lighten3,
+        anchor: colors.pink.accent1,
         error: colors.red.darken4,
         warning: colors.deepOrange,
         info: colors.lightBlue,
@@ -25,7 +24,7 @@ export default new Vuetify({
       dark: {
         primary: colors.grey.darken4,
         secondary: colors.pink.lighten1,
-        accent: colors.pink.lighten4,
+        accent: colors.pink.lighten3,
         anchor: colors.pink.accent1,
         error: colors.red.darken4,
         warning: colors.deepOrange,
