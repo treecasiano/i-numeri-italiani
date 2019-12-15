@@ -1,26 +1,24 @@
 <template>
   <v-container>
-    <v-layout text-left wrap justify-space-start>
-      <v-flex xs12 sm4 ma-1 align-self-baseline>
+    <v-layout wrap justify-center text-center>
+      <v-flex xs12 md6 ma-5 align-self-baseline>
         <v-text-field
           v-model="numberToTranslate"
-          clearable
-          color="accent"
-          max="9999"
           :counter="counter"
-          min="1"
+          @keyup="translateNumber(numberToTranslate)"
+          clearable
+          color="secondary"
           label="Number from 1 to 9999"
+          max="9999"
+          min="1"
           outlined
           rounded
-          type="number"
           step="1"
+          type="number"
         ></v-text-field>
       </v-flex>
-      <v-flex xs6 sm2 ma-1 align-self-baseline>
-        <v-btn color="accent darken-4" rounded @click="translateNumber(numberToTranslate)">translate</v-btn>
-      </v-flex>
-      <v-flex xs12 text-left>
-        <div class="accent--text">translation: {{ translatedNumber }}</div>
+      <v-flex xs12 md6 ma-5 align-self-baseline>
+        <div class="accent--text display-4">{{ translatedNumber }}</div>
       </v-flex>
     </v-layout>
   </v-container>
