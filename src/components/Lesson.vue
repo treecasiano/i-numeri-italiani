@@ -31,9 +31,7 @@
       </v-simple-table>
 
       <h2 class="my-3">Counting from 11 to 99</h2>
-      <p class="my-3">
-        The numbers 11 through 19 are irregular and must be memorized.
-      </p>
+      <p class="my-3">The numbers 11 through 19 are irregular and must be memorized.</p>
       <v-simple-table dense>
         <template v-slot:default>
           <thead>
@@ -74,9 +72,14 @@
 
       <p class="my-3">
         For the numbers 20 through 99, take the number in the tens place ( i.e.,
-        <em>venti</em>, <em>trenta</em>, <em>quaranta</em>) and append a number
-        1 through 9 ( <em>uno</em> through <em>nove</em>). For example, 99 is
-        <em>novantanove</em>. 34 is <em>trentaquattro</em>. 22 is
+        <em>venti</em>,
+        <em>trenta</em>,
+        <em>quaranta</em>) and append a number
+        1 through 9 (
+        <em>uno</em> through
+        <em>nove</em>). For example, 99 is
+        <em>novantanove</em>. 34 is
+        <em>trentaquattro</em>. 22 is
         <em>ventidue</em>.
       </p>
 
@@ -84,11 +87,13 @@
       <p>
         If the number ends in 1 or 8, drop the final vowel from the tens number.
         Thus,
-        <em>trenta</em> + <em>otto</em> = trentotto (38).
+        <em>trenta</em> +
+        <em>otto</em> = trentotto (38).
       </p>
       <p>
         When numbers end in 3,
-        <em>tre</em> becomes <em>tré</em>.
+        <em>tre</em> becomes
+        <em>tré</em>.
       </p>
 
       <v-simple-table dense>
@@ -120,9 +125,13 @@
 
       <p>
         For 200, 300, 400, you add 2, 3, 4, and so forth to
-        <em>cento</em>. (You do not add <em>uno</em> before <em>cento</em> if
-        the number is 100.) Thus, 200 is <em>duecento</em>, 300 is
-        <em>trecento</em>, and 400 is <em>quattrocento</em>. You add the number
+        <em>cento</em>. (You do not add
+        <em>uno</em> before
+        <em>cento</em> if
+        the number is 100.) Thus, 200 is
+        <em>duecento</em>, 300 is
+        <em>trecento</em>, and 400 is
+        <em>quattrocento</em>. You add the number
         1 through 99 to the hundreds value to get the other combinations of
         numbers:
       </p>
@@ -147,32 +156,25 @@
         </template>
       </v-simple-table>
 
-      <table>
-        <tr>
-          <th scope="col">number</th>
-          <th scope="col">translation</th>
-        </tr>
-        <tr>
-          <td>147</td>
-          <td>centoquarantasette</td>
-        </tr>
-        <tr>
-          <td>888</td>
-          <td>ottocentottantotto</td>
-        </tr>
-      </table>
-
       <p class="my-3">
-        <strong>IMPORTANT!</strong> When <em>cento</em> is followed by
-        <em>otto</em> or <em>ottanta</em>, you drop the <em>o</em> from
+        <strong>IMPORTANT!</strong> When
+        <em>cento</em> is followed by
+        <em>otto</em> or
+        <em>ottanta</em>, you drop the
+        <em>o</em> from
         <em>cento</em>.
       </p>
 
       <h2 class="my-3">Counting from 1000 to 9999</h2>
       <p>
-        <em>Mille</em> is 1000. <em>Mille</em> changes to <em>mila</em> in 2000
-        (<em>duemila</em>), 3000 (<em>tremila</em>), 4000
-        (<em>quattromila</em>), and so forth.
+        <em>Mille</em> is 1000.
+        <em>Mille</em> changes to
+        <em>mila</em> in 2000
+        (
+        <em>duemila</em>), 3000 (
+        <em>tremila</em>), 4000
+        (
+        <em>quattromila</em>), and so forth.
       </p>
       <p>Numbers are chained together without spaces.</p>
 
