@@ -6,6 +6,7 @@
           v-model="numberToTranslate"
           :counter="counter"
           @keyup="translateNumber(numberToTranslate)"
+          @click:clear="clearValue"
           clearable
           color="secondary"
           label="Number from 1 to 9999"
@@ -19,8 +20,11 @@
           type="number"
         ></v-text-field>
       </v-flex>
-      <v-flex xs12 md6 ma-5 align-self-baseline>
+      <v-flex v-if="translatedNumber" xs12 md6 ma-5 align-self-baseline>
         <div class="accent--text title">{{ translatedNumber }}</div>
+      </v-flex>
+      <v-flex v-else xs12 md6 ma-5 align-self-baseline>
+        <div class="accent--text title">{{ promptToEnterNumber }}</div>
       </v-flex>
     </v-layout>
   </v-container>
@@ -36,10 +40,17 @@ export default {
     counter: 4,
     numberToTranslate: null,
     translatedNumber: null,
+    promptToEnterNumber: "Please enter a number."
   }),
   methods: {
+    clearValue() {
+      this.translatedNumber=null;
+    },
     translateNumber(input) {
+      // TODO: Check for range, and return message here. 
+      // TODO: Clean up the translation function so that it never returns a string, just a number or null. 
       if (!input) {
+        this.translatedNumber= null;
         return;
       }
       this.translatedNumber = translate.parseInput(input);
