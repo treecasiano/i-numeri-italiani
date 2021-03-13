@@ -1,4 +1,6 @@
 {
   "htmlWhitespaceSensitivity": "css",
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "arrowParens": "avoid"
 }

@@ -39,18 +39,27 @@ export default {
   data: () => ({
     counter: 4,
     numberToTranslate: null,
+    promptToEnterNumber: "Please enter a number.",
     translatedNumber: null,
-    promptToEnterNumber: "Please enter a number."
   }),
   methods: {
     clearValue() {
-      this.translatedNumber=null;
+      this.translatedNumber = null;
     },
     translateNumber(input) {
-      // TODO: Check for range, and return message here. 
-      // TODO: Clean up the translation function so that it never returns a string, just a number or null. 
+      // TODO: Add input validation for numbers outside of the range and don't allow negative numbers or commas
+      // TODO: Check for range, and return message here.
+      // TODO: Clean up the JavaScript
+      // TODO: Fix layout.
+      // TODO: Clean up the translation function so that it never returns a string, just a number or null.
+      // TODO: Create the practice tab
+      // TODO: Make the header and landing page more appealing
+      // TODO: Clean up linting errors
+      // TODO: Update Vuetify packages
+      // TODO: Add the github pages deployment library for Vue
+
       if (!input) {
-        this.translatedNumber= null;
+        this.translatedNumber = null;
         return;
       }
       this.translatedNumber = translate.parseInput(input);

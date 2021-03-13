@@ -30,9 +30,6 @@ const tensPlaceNums = {
   "8": "ottanta",
   "9": "novanta",
 };
-
-// TODO: Move numsTo19 and tensPlaceNums to a JSON object.
-
 class TranslateNumberToItalian {
   constructor() {
     this.numsTo19 = numsTo19;
