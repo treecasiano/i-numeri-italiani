@@ -18,7 +18,7 @@
       </template>
     </v-app-bar>
 
-    <v-content>
+    <v-main>
       <v-tabs-items v-model="tabs" color="transparent">
         <v-tab-item>
           <Lesson />
@@ -28,7 +28,7 @@
         </v-tab-item>
         <v-tab-item></v-tab-item>
       </v-tabs-items>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 

@@ -54,8 +54,6 @@ export default {
       // TODO: Clean up the translation function so that it never returns a string, just a number or null.
       // TODO: Create the practice tab
       // TODO: Make the header and landing page more appealing
-      // TODO: Clean up linting errors
-      // TODO: Update Vuetify packages
       // TODO: Add the github pages deployment library for Vue
 
       if (!input) {
