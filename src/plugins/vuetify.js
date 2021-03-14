@@ -12,10 +12,9 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: colors.grey.darken4,
+        primary: colors.pink.darken4,
         secondary: colors.pink.lighten1,
         accent: colors.pink.lighten3,
-        anchor: colors.pink.accent1,
         error: colors.red.darken4,
         warning: colors.deepOrange,
         info: colors.lightBlue,
@@ -25,7 +24,6 @@ export default new Vuetify({
         primary: colors.grey.darken4,
         secondary: colors.pink.lighten1,
         accent: colors.pink.lighten3,
-        anchor: colors.pink.accent1,
         error: colors.red.darken4,
         warning: colors.deepOrange,
         info: colors.lightBlue,

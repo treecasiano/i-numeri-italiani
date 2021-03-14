@@ -1,15 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-toolbar-title class="accent--text display-1"
-        >I Numeri Italiani</v-toolbar-title
-      >
+    <v-app-bar app color="primary" dark flat>
+      <v-toolbar-title class="display-1">I Numeri Italiani</v-toolbar-title>
+      <v-spacer></v-spacer>
+
       <template v-slot:extension>
         <v-tabs
-          v-model="tabs"
+          background-color="secondary"
           centered
-          slider-color="accent"
-          background-color="transparent"
+          class="pb-4"
+          slider-color="primary lighten-4"
+          slider-size="5"
+          v-model="tabs"
         >
           <v-tab>Learn</v-tab>
           <v-tab>Translate</v-tab>
@@ -17,7 +19,6 @@
         </v-tabs>
       </template>
     </v-app-bar>
-
     <v-main>
       <v-tabs-items v-model="tabs" color="transparent">
         <v-tab-item>

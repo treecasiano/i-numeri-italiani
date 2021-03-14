@@ -47,10 +47,11 @@ export default {
       this.translatedNumber = null;
     },
     translateNumber(input) {
+      // TODO: Fix layout. (Convert tables to Vuetify simple tables.)
       // TODO: Add input validation for numbers outside of the range and don't allow negative numbers or commas
       // TODO: Check for range, and return message here.
-      // TODO: Clean up the JavaScript
-      // TODO: Fix layout.
+      // TODO: Clean up the JavaScript.
+      // TODO: Fix router. (Show tab in URL.)
       // TODO: Clean up the translation function so that it never returns a string, just a number or null.
       // TODO: Create the practice tab
       // TODO: Make the header and landing page more appealing
