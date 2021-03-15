@@ -1,12 +1,17 @@
 <template>
-  <v-container>
-    <v-layout wrap justify-center text-center>
-      <v-flex xs12 md6 ma-5 align-self-baseline>
+  <v-card
+    class="mx-auto my-8 pa-5"
+    color="grey lighten-3"
+    elevation="0"
+    max-width="600"
+  >
+    <v-card-text class="text-center">
+      <div>
         <v-text-field
-          v-model="numberToTranslate"
           :counter="counter"
-          @keyup="translateNumber(numberToTranslate)"
+          :rules="rules"
           @click:clear="clearValue"
+          @keyup="translateNumber(numberToTranslate)"
           clearable
           color="secondary"
           label="Number from 1 to 9999"
@@ -18,16 +23,17 @@
           rounded
           step="1"
           type="number"
+          v-model="numberToTranslate"
         ></v-text-field>
-      </v-flex>
-      <v-flex v-if="translatedNumber" xs12 md6 ma-5 align-self-baseline>
-        <div class="accent--text title">{{ translatedNumber }}</div>
-      </v-flex>
-      <v-flex v-else xs12 md6 ma-5 align-self-baseline>
-        <div class="accent--text title">{{ promptToEnterNumber }}</div>
-      </v-flex>
-    </v-layout>
-  </v-container>
+      </div>
+      <div v-if="translatedNumber">
+        <div class="primary--text title">{{ translatedNumber }}</div>
+      </div>
+      <div v-else>
+        <div class="primary--text title">{{ promptToEnterNumber }}</div>
+      </div>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -39,7 +45,14 @@ export default {
   data: () => ({
     counter: 4,
     numberToTranslate: null,
-    promptToEnterNumber: "Please enter a number.",
+    promptToEnterNumber: "Enter a number between 1 and 9999.",
+    rules: [
+      value =>
+        value >= 0 ||
+        "Must be a number greater than 0 and should not start with a 0.",
+      value => (value || "").length < 5 || "Max 4 characters",
+      value => (value && !value.includes(".")) || "Integers only, please.",
+    ],
     translatedNumber: null,
   }),
   methods: {
@@ -47,8 +60,8 @@ export default {
       this.translatedNumber = null;
     },
     translateNumber(input) {
+      // TODO: Prevent use of commas.
       // TODO: Fix layout. (Convert tables to Vuetify simple tables.)
-      // TODO: Add input validation for numbers outside of the range and don't allow negative numbers or commas
       // TODO: Check for range, and return message here.
       // TODO: Clean up the JavaScript.
       // TODO: Fix router. (Show tab in URL.)

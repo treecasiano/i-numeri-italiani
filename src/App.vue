@@ -20,15 +20,17 @@
       </template>
     </v-app-bar>
     <v-main>
-      <v-tabs-items v-model="tabs" color="transparent">
-        <v-tab-item>
-          <Lesson />
-        </v-tab-item>
-        <v-tab-item>
-          <NumberToTextTranslator />
-        </v-tab-item>
-        <v-tab-item></v-tab-item>
-      </v-tabs-items>
+      <v-container>
+        <v-tabs-items v-model="tabs" color="transparent">
+          <v-tab-item>
+            <Lesson />
+          </v-tab-item>
+          <v-tab-item>
+            <NumberToTextTranslator />
+          </v-tab-item>
+          <v-tab-item></v-tab-item>
+        </v-tabs-items>
+      </v-container>
     </v-main>
   </v-app>
 </template>
